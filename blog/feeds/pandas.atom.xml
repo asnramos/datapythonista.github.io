@@ -41,12 +41,16 @@ provide a common memory representation for all dataframe libraries. So, librarie
 wheel, and transferring data among packages (e.g. pandas to R) can be done without transformations or even without
 copying the memory.&lt;/p&gt;
 &lt;p&gt;Vaex is already using Arrow, and pandas has plans in its &lt;a href="https://pandas.pydata.org/pandas-docs/stable/development/roadmap.html"&gt;roadmap&lt;/a&gt;
-to move in that direction. People was in general happy with the idea, but there were some concerns
+to move in that direction. People were in general happy with the idea, but there were some concerns
 about decisions made in Arrow (mainly contributed by Sylvain, from xframe):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache arrow C++ API and implementation not following common C++ idioms&lt;/li&gt;
 &lt;li&gt;Using a monorepo (including all bindings in the same repo as Arrow)&lt;/li&gt;
+&lt;li&gt;Not a clear distinction between the specification and implementation (as in for instance project Jupyter)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Not only related to Arrow, but it was mentioned that would be useful to have
+dataframes for streaming data. A library named &lt;a href="https://github.com/finos/perspective"&gt;Perspective&lt;/a&gt;
+exists, which implements something similar, and has &lt;a href="https://github.com/timkpaine/perspective-python/"&gt;Python bindings&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Interoperability&lt;/h3&gt;
 &lt;p&gt;The next topic was about &lt;strong&gt;interoperability&lt;/strong&gt;. How dataframe libraries can interact among them, and
 with the rest of the ecosystem. Examples can be:&lt;/p&gt;
@@ -63,6 +67,8 @@ one of the less mature participating projects (in Devin's words), it's user-faci
 potentially be reused by other projects reimplementing dataframes with a different backend.&lt;/p&gt;
 &lt;p&gt;It was noted that could be useful to have a common test suite, if a standard dataframe API is defined.
 There was agreement that the pandas test suite is not appropriate for other packages.&lt;/p&gt;
+&lt;p&gt;NumPy did something similar in &lt;a href="https://numpy.org/neps/nep-0018-array-function-protocol.html"&gt;NEP-18&lt;/a&gt;,
+which can be used as reference.&lt;/p&gt;
 &lt;h3&gt;Public API improvements&lt;/h3&gt;
 &lt;p&gt;At the end of the session, we discussed about possible improvements to the public pandas API.
 Since several of the participants reimplemented the pandas API, was a good opportunity to see

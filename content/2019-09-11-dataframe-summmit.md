@@ -55,6 +55,10 @@ about decisions made in Arrow (mainly contributed by Sylvain, from xframe):
 - Using a monorepo (including all bindings in the same repo as Arrow)
 - Not a clear distinction between the specification and implementation (as in for instance project Jupyter)
 
+Not only related to Arrow, but it was mentioned that would be useful to have
+dataframes for streaming data. A library named [Perspective](https://github.com/finos/perspective)
+exists, which implements something similar, and has [Python bindings](https://github.com/timkpaine/perspective-python/).
+
 ### Interoperability
 
 The next topic was about **interoperability**. How dataframe libraries can interact among them, and
@@ -74,6 +78,9 @@ potentially be reused by other projects reimplementing dataframes with a differe
 
 It was noted that could be useful to have a common test suite, if a standard dataframe API is defined.
 There was agreement that the pandas test suite is not appropriate for other packages.
+
+NumPy did something similar in [NEP-18](https://numpy.org/neps/nep-0018-array-function-protocol.html),
+which can be used as reference.
 
 ### Public API improvements
 

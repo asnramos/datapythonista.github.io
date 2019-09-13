@@ -20,7 +20,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand" href="/pandas-web/"><img alt="" src="/pandas-web/static/img/pandas_dark.svg"/></a>
+                <a class="navbar-brand" href="/pandas-web/"><img alt="" src="/pandas-webNone"/></a>
 
                 <div class="collapse navbar-collapse" id="nav-content">   
                     <ul class="navbar-nav">
@@ -414,6 +414,16 @@ authors to coordinate on the namespace.</p>
             $(function () {
               $('[data-toggle="popover"]').popover()
             })
+            $(function () {
+                // temporary functionality to test different logos
+                var img = $(location).attr("hash").substr(1);
+                if (!img.includes("."))
+                    img += ".png";
+                if (!img.startsWith("http"))
+                    img = "https://datapythonista.github.io/pandas_logos/" + img;
+                $(".navbar-brand img").attr("src", img);
+                $(".navbar-brand img").height(30);
+            });
         </script>
     </body>
 </html>

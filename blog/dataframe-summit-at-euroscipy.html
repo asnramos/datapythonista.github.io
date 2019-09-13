@@ -156,7 +156,7 @@ Also the developer of a proprietary dataframe library in Python, who could also 
 <li><strong><a href="https://github.com/pandas-dev/pandas">pandas</a></strong> Flexible and powerful data analysis / manipulation library for Python</li>
 <li><strong><a href="https://github.com/dask/dask">Dask</a></strong> Parallel computing with task scheduling</li>
 <li><strong><a href="https://github.com/vaexio/vaex">Vaex</a></strong> Out-of-Core DataFrames for Python</li>
-<li><strong><a href="https://github.com/modin-project/modin">Modin</a></strong> Scaling pandas with <a href="https://github.com/ray-project/ray/">Ray</a></li>
+<li><strong><a href="https://github.com/modin-project/modin">Modin</a></strong> A dataframe framework that scales the pandas API with <a href="https://github.com/ray-project/ray">Ray</a> and <a href="https://github.com/dask/dask">Dask</a></li>
 <li><strong><a href="https://github.com/QuantStack/xframe">xframe</a></strong> DataFrame library in C++</li>
 </ul>
 <p>We started by personal introductions, project introductions, and what people wanted to get out
@@ -196,7 +196,9 @@ operations and methods would be very useful for third party libraries expecting 
 <p>Devin from Modin is doing research at UC Berkeley on defining this API, and he's already got some
 documentation he's happy to share. Modin is already implemented with this design, and while it's
 one of the less mature participating projects (in Devin's words), it's user-facing layer could
-potentially be reused by other projects reimplementing dataframes with a different backend.</p>
+potentially be reused by other projects reimplementing dataframes with a different backend. Devin
+has shared the documentation for this <a href="https://modin.readthedocs.io/en/latest/architecture.html#system-architecture">design</a> and the <a href="https://modin.readthedocs.io/en/latest/architecture.html#modin-dataframe-api">corresponding API</a> on
+the <a href="https://modin.readthedocs.io">Modin documentation</a>.</p>
 <p>It was noted that could be useful to have a common test suite, if a standard dataframe API is defined.
 There was agreement that the pandas test suite is not appropriate for other packages.</p>
 <p>NumPy did something similar in <a href="https://numpy.org/neps/nep-0018-array-function-protocol.html">NEP-18</a>,

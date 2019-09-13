@@ -26,7 +26,7 @@ Those were the libraries represented:
 - **[pandas](https://github.com/pandas-dev/pandas)** Flexible and powerful data analysis / manipulation library for Python
 - **[Dask](https://github.com/dask/dask)** Parallel computing with task scheduling
 - **[Vaex](https://github.com/vaexio/vaex)** Out-of-Core DataFrames for Python
-- **[Modin](https://github.com/modin-project/modin)** Scaling pandas with [Ray](https://github.com/ray-project/ray/)
+- **[Modin](https://github.com/modin-project/modin)** A dataframe framework that scales the pandas API with [Ray](https://github.com/ray-project/ray) and [Dask](https://github.com/dask/dask)
 - **[xframe](https://github.com/QuantStack/xframe)** DataFrame library in C++
 
 We started by personal introductions, project introductions, and what people wanted to get out
@@ -74,7 +74,9 @@ operations and methods would be very useful for third party libraries expecting 
 Devin from Modin is doing research at UC Berkeley on defining this API, and he's already got some
 documentation he's happy to share. Modin is already implemented with this design, and while it's
 one of the less mature participating projects (in Devin's words), it's user-facing layer could
-potentially be reused by other projects reimplementing dataframes with a different backend.
+potentially be reused by other projects reimplementing dataframes with a different backend. Devin
+has shared the documentation for this [design](https://modin.readthedocs.io/en/latest/architecture.html#system-architecture) and the [corresponding API](https://modin.readthedocs.io/en/latest/architecture.html#modin-dataframe-api) on
+the [Modin documentation](https://modin.readthedocs.io).
 
 It was noted that could be useful to have a common test suite, if a standard dataframe API is defined.
 There was agreement that the pandas test suite is not appropriate for other packages.

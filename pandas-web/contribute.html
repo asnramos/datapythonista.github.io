@@ -18,8 +18,9 @@
               crossorigin="anonymous">
         
             <link rel="stylesheet"
-                  href="/pandas-web/static/css/pandas.css">
+                  href="/static/css/pandas.css">
         
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
@@ -29,7 +30,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <a class="navbar-brand" href="/pandas-web/"><img alt="" src="/pandas-web/static/img/pandas.png"/></a>
+                    <a class="navbar-brand" href="/"><img alt="" src="/static/img/pandas.png"/></a>
 
                     <div class="collapse navbar-collapse" id="nav-content">   
                         <ul class="navbar-nav ml-auto">
@@ -45,13 +46,13 @@
                                            aria-expanded="false">About us</a>
                                         <div class="dropdown-menu" aria-labelledby="about-us">
                                         
-                                            <a class="dropdown-item" href="/pandas-web/about/about.html">About pandas</a>
+                                            <a class="dropdown-item" href="/about/about.html">About pandas</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/about/roadmap.html">Project roadmap</a>
+                                            <a class="dropdown-item" href="/about/roadmap.html">Project roadmap</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/about/team.html">Team</a>
+                                            <a class="dropdown-item" href="/about/team.html">Team</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/about/citing.html">Citing pandas</a>
+                                            <a class="dropdown-item" href="/about/citing.html">Citing and logo</a>
                                         
                                         </div>
                                     </li>
@@ -59,7 +60,7 @@
                             
                                 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/pandas-web/getting_started.html">Getting started</a>
+                                        <a class="nav-link" href="/getting_started.html">Getting started</a>
                                     </li>
                                 
                             
@@ -74,11 +75,11 @@
                                            aria-expanded="false">Documentation</a>
                                         <div class="dropdown-menu" aria-labelledby="documentation">
                                         
-                                            <a class="dropdown-item" href="/pandas-web/docs/user_guide/index.html">User guide</a>
+                                            <a class="dropdown-item" href="/docs/user_guide/index.html">User guide</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/docs/reference/index.html">API reference</a>
+                                            <a class="dropdown-item" href="/docs/reference/index.html">API reference</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/docs/whatsnew/index.html">Release notes</a>
+                                            <a class="dropdown-item" href="/docs/whatsnew/index.html">Release notes</a>
                                         
                                             <a class="dropdown-item" href="https://pandas.pydata.org/pandas-docs/version/">Older versions</a>
                                         
@@ -97,15 +98,15 @@
                                            aria-expanded="false">Community</a>
                                         <div class="dropdown-menu" aria-labelledby="community">
                                         
-                                            <a class="dropdown-item" href="/pandas-web/blog.html">Blog</a>
+                                            <a class="dropdown-item" href="/blog.html">Blog</a>
                                         
                                             <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
                                         
                                             <a class="dropdown-item" href="https://pandas.discourse.group">Discuss</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/coc.html">Code of conduct</a>
+                                            <a class="dropdown-item" href="/community/coc.html">Code of conduct</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/ecosystem.html">Ecosystem</a>
+                                            <a class="dropdown-item" href="/community/ecosystem.html">Ecosystem</a>
                                         
                                         </div>
                                     </li>
@@ -113,7 +114,7 @@
                             
                                 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/pandas-webcontribute.html">Contribute</a>
+                                        <a class="nav-link" href="/contribute.html">Contribute</a>
                                     </li>
                                 
                             
@@ -132,17 +133,36 @@ and about current sponsors in the <a href="about/sponsors.html">sponsors page</a
 Financial contributions will mainly be used to advance in the <a href="about/roadmap.html">pandas roadmap</a>.</p>
 <ul>
 <li>If your <strong>company or organization</strong> is interested in helping make pandas better, please contact us at <a href="mailto:info@numfocus.org">info@numfocus.org</a></li>
-<li>If you want to contribute to <em>pandas</em> with your <strong>time</strong>, please visit the <a href="/pandas-web/docs/development/index.html">contributing page</a></li>
+<li>If you want to contribute to <em>pandas</em> with your <strong>time</strong>, please visit the <a href="/docs/development/index.html">contributing page</a></li>
 <li>If you want to support <em>pandas</em> with a <strong>donation</strong>, please use the <a href="donate.html">donations page</a>.</li>
 </ul>
             </div>
         </main>
         <footer class="container pt-4 pt-md-5 border-top">
-            <p class="float-right">
-                <a href="#">Back to top</a>
-            </p>
+            <ul class="list-inline social-buttons float-right">
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://pandas.discourse.group">
+                        <i class="fab fa-discourse"></i>
+                    </a>
+                </li>
+            </ul>
             <p>
-                © 2009 - 2019, pandas team
+                pandas is a fiscally sponsored project of <a href="https://numfocus.org">NumFOCUS</a>
             </p>
         </footer>
                 

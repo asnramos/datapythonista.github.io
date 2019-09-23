@@ -1,6 +1,5 @@
 body {
     padding-top: 5em;
-    padding-bottom: 3em;
     color: #444;
 }
 h1 {
@@ -23,6 +22,13 @@ a {
 }
 code {
     white-space: pre;
+}
+.fab {
+    font-size: 1.2rem;
+    color: #666;
+}
+.fab:hover {
+    color: #130654;
 }
 a.navbar-brand img {
     max-height: 2em;

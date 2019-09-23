@@ -1,6 +1,25 @@
 body {
     padding-top: 5em;
     padding-bottom: 3em;
+    color: #444;
+}
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #130654;
+}
+h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: black;
+}
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+}
+a {
+    color: #130654;
 }
 code {
     white-space: pre;
@@ -10,6 +29,10 @@ a.navbar-brand img {
 }
 div.card {
     margin: 0 0 .2em .2em !important;
+}
+div.card .card-title {
+    font-weight: 500;
+    color: #130654;
 }
 .book {
     padding: 0 20%;

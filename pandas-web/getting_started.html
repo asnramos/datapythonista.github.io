@@ -45,17 +45,13 @@
                                            aria-expanded="false">About us</a>
                                         <div class="dropdown-menu" aria-labelledby="about-us">
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/about.html">Our history</a>
+                                            <a class="dropdown-item" href="/pandas-web/about/about.html">About pandas</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/roadmap.html">Project roadmap</a>
+                                            <a class="dropdown-item" href="/pandas-web/about/roadmap.html">Project roadmap</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/ecosystem.html">Ecosystem</a>
+                                            <a class="dropdown-item" href="/pandas-web/about/team.html">Team</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/team.html">Team</a>
-                                        
-                                            <a class="dropdown-item" href="/pandas-web/community/citing.html">Citing pandas</a>
-                                        
-                                            <a class="dropdown-item" href="/pandas-web/donate.html">Donate</a>
+                                            <a class="dropdown-item" href="/pandas-web/about/citing.html">Citing pandas</a>
                                         
                                         </div>
                                     </li>
@@ -63,7 +59,7 @@
                             
                                 
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/pandas-web/install.html">Getting started</a>
+                                        <a class="nav-link" href="/pandas-web/getting_started.html">Getting started</a>
                                     </li>
                                 
                             
@@ -103,15 +99,21 @@
                                         
                                             <a class="dropdown-item" href="/pandas-web/blog.html">Blog</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/docs/development/index.html">Contributing to pandas</a>
-                                        
                                             <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
                                         
-                                            <a class="dropdown-item" href="https://groups.google.com/forum/#!forum/pydata">Discuss (mailing list)</a>
+                                            <a class="dropdown-item" href="https://pandas.discourse.group">Discuss</a>
                                         
-                                            <a class="dropdown-item" href="/pandas-web/community/coc.html">Code of Conduct</a>
+                                            <a class="dropdown-item" href="/pandas-web/community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="/pandas-web/community/ecosystem.html">Ecosystem</a>
                                         
                                         </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/pandas-webcontribute.html">Contribute</a>
                                     </li>
                                 
                             
@@ -122,97 +124,48 @@
         </header>
         <main role="main">
             <div class="container">
-                <h1 id="about-pandas">About pandas</h1>
-<h2 id="history-of-development">History of development</h2>
-<p>In 2008, <em>pandas</em> development began at <a href="http://www.aqr.com">AQR Capital Management</a>.
-By the end of 2009 it had been <a href="http://en.wikipedia.org/wiki/Open_source">open sourced</a>,
-and is actively supported today by a community of like-minded individuals around the world who
-contribute their valuable time and energy to help make open source <em>pandas</em>
-possible. Thank you to <a href="team.html">all of our contributors</a>.</p>
-<p>Since 2015, <em>pandas</em> is a <a href="https://numfocus.org/sponsored-projects">NumFOCUS sponsored project</a>.
-This will help ensure the success of development of <em>pandas</em> as a world-class open-source project.</p>
-<h3 id="timeline">Timeline</h3>
-<ul>
-<li><strong>2008</strong>:  Development of <em>pandas</em> started</li>
-<li><strong>2009</strong>: <em>pandas</em> becomes open source</li>
-<li><strong>2012</strong>: First edition of <em>Python for Data Analysis</em> is published</li>
-<li><strong>2015</strong>: <em>pandas</em> becomes a <a href="https://numfocus.org/sponsored-projects">NumFOCUS sponsored project</a></li>
-<li><strong>2018</strong>: First in-person core developer sprint</li>
-</ul>
-<h2 id="library-highlights">Library Highlights</h2>
-<ul>
+                <h1 id="getting-started">Getting started</h1>
+<h2 id="installation-instructions">Installation instructions</h2>
+<p>The next steps provides the easiest and recommended way to set up your
+environment to use pandas. Other installation options can be found in
+the <a href="/pandas-web/docs/install.html">advanced installation page</a>.</p>
+<ol>
 <li>
-<p>A fast and efficient <strong>DataFrame</strong> object for data manipulation with
-  integrated indexing;</p>
+<p>Download <a href="https://www.anaconda.com/distribution/">Anaconda</a> for your operating system and
+   the latest Python version, run the installer, and follow the steps. Detailed instructions
+   on how to install Anaconda can be found in the
+   <a href="https://docs.anaconda.com/anaconda/install/">Anaconda documentation</a>).</p>
 </li>
 <li>
-<p>Tools for <strong>reading and writing data</strong> between in-memory data structures and
-  different formats: CSV and text files, Microsoft Excel, SQL databases, and
-  the fast HDF5 format;</p>
+<p>In the Anaconda prompt (or terminal in Linux or MacOS), start JupyterLab:</p>
+<p><img class="img-fluid" alt="" src="/pandas-web/static/img/install/anaconda_prompt.png"/></p>
 </li>
 <li>
-<p>Intelligent <strong>data alignment</strong> and integrated handling of <strong>missing data</strong>:
-  gain automatic label-based alignment in computations and easily manipulate
-  messy data into an orderly form;</p>
+<p>In JupyterLab, create a new (Python 3) notebook:</p>
+<p><img class="img-fluid" alt="" src="/pandas-web/static/img/install/jupyterlab_home.png"/></p>
 </li>
 <li>
-<p>Flexible <strong>reshaping</strong> and pivoting of data sets;</p>
+<p>In the first cell of the notebook, you can import pandas and check the version with:</p>
+<p><img class="img-fluid" alt="" src="/pandas-web/static/img/install/pandas_import_and_version.png"/></p>
 </li>
 <li>
-<p>Intelligent label-based <strong>slicing</strong>, <strong>fancy indexing</strong>, and <strong>subsetting</strong>
-  of large data sets;</p>
+<p>Now you are ready to use pandas, and you can write your code in the next cells.</p>
 </li>
-<li>
-<p>Columns can be inserted and deleted from data structures for <strong>size
-  mutability</strong>;</p>
-</li>
-<li>
-<p>Aggregating or transforming data with a powerful <strong>group by</strong> engine
-  allowing split-apply-combine operations on data sets;</p>
-</li>
-<li>
-<p>High performance <strong>merging and joining</strong> of data sets;</p>
-</li>
-<li>
-<p><strong>Hierarchical axis indexing</strong> provides an intuitive way of working with
-  high-dimensional data in a lower-dimensional data structure;</p>
-</li>
-<li>
-<p><strong>Time series</strong>-functionality: date range generation and frequency
-  conversion, moving window statistics, moving window linear regressions, date
-  shifting and lagging. Even create domain-specific time offsets and join time
-  series without losing data;</p>
-</li>
-<li>
-<p>Highly <strong>optimized for performance</strong>, with critical code paths written in
-  <a href="http://www.cython.org/">Cython</a> or C.</p>
-</li>
-<li>
-<p>Python with <em>pandas</em> is in use in a wide variety of <strong>academic and
-  commercial</strong> domains, including Finance, Neuroscience, Economics,
-  Statistics, Advertising, Web Analytics, and more.</p>
-</li>
-</ul>
-<h2 id="mission">Mission</h2>
-<p><em>pandas</em> aims to be the fundamental high-level building block for doing practical,
-real world data analysis in Python.
-Additionally, it has the broader goal of becoming the most powerful and flexible
-open source data analysis / manipulation tool available in any language.</p>
-<h2 id="vision">Vision</h2>
-<p>A world where data analytics and manipulation software is:</p>
-<ul>
-<li>Accessible to everyone</li>
-<li>Free for users to use and modify</li>
-<li>Flexible</li>
-<li>Powerful</li>
-<li>Easy to use</li>
-<li>Fast</li>
-</ul>
-<h2 id="values">Values</h2>
-<p>Is in the core of <em>pandas</em> to be respectful and welcoming with everybody,
-users, contributors and the broader community. Regardless of level of experience,
-gender, gender identity and expression, sexual orientation, disability,
-personal appearance, body size, race, ethnicity, age, religion, or nationality.</p>
+</ol>
+<h2 id="tutorials">Tutorials</h2>
+<p>You can learn more about pandas in the <a href="#">tutorials</a>, and more about JupyterLab
+in the <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">JupyterLab documentation</a>.</p>
+<h2 id="books">Books</h2>
+<p>The book we recommend to learn pandas is <a href="https://amzn.to/2KI5JJw">Python for Data Analysis</a>,
+by <a href="https://wesmckinney.com/">Wes McKinney</a>, creator of pandas.</p>
+<p><a href="https://amzn.to/2KI5JJw">
+    <img alt="Python for Data Analysis" src="/pandas-web/static/img/pydata_book.gif"/>
+</a></p>
+<h2 id="videos">Videos</h2>
+<iframe width="560" height="315" frameborder="0"
+src="https://www.youtube.com/embed/_T8LGqJtuGc"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
             </div>
         </main>
         <footer class="container pt-4 pt-md-5 border-top">

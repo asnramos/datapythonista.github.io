@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - Marc Garcia</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/marc-garcia.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-09-11T00:00:00+01:00</updated><subtitle>about me</subtitle><entry><title>Dataframe summit @ EuroSciPy write up</title><link href="https://datapythonista.github.io/blog/dataframe-summit-at-euroscipy.html" rel="alternate"></link><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-09-11:/blog/dataframe-summit-at-euroscipy.html</id><summary type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - Marc Garcia</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/marc-garcia.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-11-17T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>New pandas workflow</title><link href="https://datapythonista.github.io/blog/new-pandas-workflow.html" rel="alternate"></link><published>2019-11-17T00:00:00+00:00</published><updated>2019-11-17T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-17:/blog/new-pandas-workflow.html</id><summary type="html">&lt;p&gt;Some exciting news. After some years of organizing &lt;a href="https://python-sprints.github.io/"&gt;sprints&lt;/a&gt;,
+and maintaining open source, I've been thinking on a more efficient workflow for projects with
+high volume of activity, like &lt;a href="https://pandas.pydata.org/"&gt;pandas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An exaggerated example would be that I want to create 1,600 issues in pandas. One for each
+docstring of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some exciting news. After some years of organizing &lt;a href="https://python-sprints.github.io/"&gt;sprints&lt;/a&gt;,
+and maintaining open source, I've been thinking on a more efficient workflow for projects with
+high volume of activity, like &lt;a href="https://pandas.pydata.org/"&gt;pandas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An exaggerated example would be that I want to create 1,600 issues in pandas. One for each
+docstring of the project, with the flaws that we are able to automatically detect. As a
+side know, most of our validations to detect incorrect things in docstrings based on the
+&lt;a href="https://numpydoc.readthedocs.io/en/latest/format.html"&gt;numpydoc standard&lt;/a&gt; are now available
+in &lt;code&gt;numpydoc&lt;/code&gt; (in master). You can check the
+&lt;a href="https://numpydoc.readthedocs.io/en/latest/validation.html"&gt;documentation&lt;/a&gt; to
+see how to use it. And the &lt;a href="https://github.com/numpy/numpydoc/blob/master/numpydoc/validate.py#L35"&gt;source code&lt;/a&gt;
+for the list of errors we validate.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/numpydoc_validation.png"&gt;&lt;/p&gt;
+&lt;p&gt;Back to the example, &lt;a href="https://developer.github.com/v3/"&gt;GitHub API&lt;/a&gt; and our validations
+scripts would make it very easy to create those 1,600 GitHub issues. We could create a
+label &lt;code&gt;Docstring errors&lt;/code&gt; to identify them, and ask the community for help to fix
+those. The community responded extremely well in the past when we ask them for help.
+500 people joined our &lt;a href="https://numfocus.org/blog/worldwide-pandas-sprint"&gt;worldwide documentation sprint&lt;/a&gt;.
+So, things seem feasible so far.&lt;/p&gt;
+&lt;p&gt;There are just two main problems to make all this work:&lt;/p&gt;
+&lt;p&gt;First, there is a small number of maintainers who would have to review, give feedback, and
+merge the contributions. 1,600 pull requests is surely too much for a small group
+of volunteers. We are surely in a much better position now, than when 500 people
+contributed in a single day (it took months to deal with all the pull requests of the sprints).
+We are around 12 active maintainers, compared to 4 at that time.
+And we've been improving on making our workflow more efficient, with the
+CI providing every time better feedback. More accurate, and presented in a better
+way, so first time contributors can detect problems in their work without much
+intervention from maintainers. &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;
+will be key in making our workflow more efficient for code reviews (things like
+contributors receiving automated emails when the CI detects something that needs to
+be fixed in their work).&lt;/p&gt;
+&lt;p&gt;Second, how could people know which of the 1,600 issues are available, and which
+are already in the works by someone else? For small projects, GitHub has an option
+&lt;code&gt;Assignees&lt;/code&gt; where members of a scrum team can assign to themselves what they are
+working on. But this is not possible for a project the size of pandas, since only members
+of the organization are able to self-assign issues. And even if we wanted to add
+every possible contributor to the pandas GitHub organization, that would be a huge
+amount of work for maintainers.&lt;/p&gt;
+&lt;p&gt;The best solution should come from GitHub. Adding an option so project admins can
+decide whether they want to allow any GitHub user to self-assign issues in their
+projects. I've been discussing this with people at GitHub, and it is something it
+may be added. But not immediately.&lt;/p&gt;
+&lt;p&gt;The good news is that with the help of &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;
+is now possible to achieve the same, in a slightly trickier way. We just added
+to pandas an &lt;a href="https://github.com/pandas-dev/pandas/pull/29648"&gt;action to self-assign issues&lt;/a&gt;.
+How it works is by just writing a comment with the keyword &lt;code&gt;take&lt;/code&gt; to an issue.
+And few seconds later, the action will assign the issue to the commenter. This
+is possible because few months ago GitHub added a feature to let
+&lt;a href="https://github.blog/2019-06-25-assign-issues-to-issue-commenters/"&gt;assign issues to issue commenters&lt;/a&gt;.
+It is not possible even for maintainers to assign an issue to an arbitrary user.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/github_actions_assign.png"&gt;&lt;/p&gt;
+&lt;p&gt;With this simple but powerful change, now a much more efficient workflow should
+be possible. The workflow could consist in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;People interested in contributing to pandas start by &lt;a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html"&gt;setting up the environment&lt;/a&gt;
+  and learn &lt;a href="https://docs.google.com/presentation/d/1rOSYXZPyMe9KXnbVK_xbJzw_-ijxd6bIxndmvPU6L2o/edit?usp=sharing"&gt;how to make an open source contribution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Then they check the list of &lt;a href="https://github.com/pandas-dev/pandas/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22+no%3Aassignee"&gt;unassigned good first issues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Once they find one that they want to work on, they write a comment with the keyword &lt;code&gt;take&lt;/code&gt; on it&lt;/li&gt;
+&lt;li&gt;The issue will disappear from the list of unassigned issues,
+  other people won't waste time checking whether it's available or not&lt;/li&gt;
+&lt;li&gt;If the person can't finally move forward (got busy, they are not interested anymore...)
+  they can simply unassign themselves from the issue, and it will be in the list again&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This new workflow scales to the 1,600 issues or more. Before, potential contributors had
+a list with all issues, assigned and not assigned. They had to check each individually for comments
+claiming the issue, deal with ambiguity (do messages like "can I work on this?" mean you're working
+on the issue?), and possibly have some discussion, before they could know if someone else is working in the issue.&lt;/p&gt;
+&lt;p&gt;One obvious problem is if people self-assigning an issue, discontinuing work on it, but not
+unassigning the issue. We will see how this works, but even in the worst case, unassigned
+issues will still be easy to find if they exist. For the assigned ones, people can check them,
+and know immediately who to ask to know if work is still going on, or progress was made.
+And to ask if the original assignee is happy to hand over the issue to the new interested contributor.&lt;/p&gt;
+&lt;p&gt;Implementing a bot that unassignes issues automatically after N days of inactivity could
+also be an option.&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry><entry><title>Dataframe summit @ EuroSciPy write up</title><link href="https://datapythonista.github.io/blog/dataframe-summit-at-euroscipy.html" rel="alternate"></link><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-09-11:/blog/dataframe-summit-at-euroscipy.html</id><summary type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
 This year we introduced the &lt;a href="https://www.euroscipy.org/2019/maintainers.html"&gt;maintainers track&lt;/a&gt;
 a room dedicated to discussions among maintainers. The idea is similar to the 
 &lt;a href="https://en.wikipedia.org/wiki/Birds_of_a_feather_(computing)"&gt;birds of a feather&lt;/a&gt; or unconference
@@ -87,7 +164,7 @@ list wasn't used by the participants (except the pandas maintainers), and it did
 to be the appropriate place.&lt;/p&gt;
 &lt;p&gt;Another idea would be to organize another bigger dataframe summit in the future. It was
 proposed to be hosted somewhere in the Caribbean (ok, it was me who proposed that, and
-everybody else laughed, but here I leave it again). :)&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>Setting up Fedora</title><link href="https://datapythonista.github.io/blog/setting-up-fedora.html" rel="alternate"></link><published>2018-12-05T00:00:00+00:00</published><updated>2018-12-05T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-12-05:/blog/setting-up-fedora.html</id><summary type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
+everybody else laughed, but here I leave it again). :)&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry><entry><title>Setting up Fedora</title><link href="https://datapythonista.github.io/blog/setting-up-fedora.html" rel="alternate"></link><published>2018-12-05T00:00:00+00:00</published><updated>2018-12-05T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-12-05:/blog/setting-up-fedora.html</id><summary type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
 to set it up, and get my perfect working environment. This is expected to be useful
 mainly for my &lt;strong&gt;future self&lt;/strong&gt;, but sharing it here in case someone else can find
 ideas or tips that …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I've got my new Dell XPS (with Ubuntu preinstalled), and this is the procedure
@@ -180,7 +257,7 @@ Anaconda, because I don't like to have any package in the base environment. So, 
 environment I'm sure there are the packages I'm using (and it's not falling back to the base
 environment version, which can be different of the expected).&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Useful git commands</title><link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="alternate"></link><published>2018-11-08T00:00:00+00:00</published><updated>2018-11-08T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
+</content><category term="misc"></category></entry><entry><title>Useful git commands</title><link href="https://datapythonista.github.io/blog/useful-git-commands.html" rel="alternate"></link><published>2018-11-08T00:00:00+00:00</published><updated>2018-11-08T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-11-08:/blog/useful-git-commands.html</id><summary type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
 in a sometimes unbelivable way (like when working on 3 or 5 features at the
 same time), some times there are operations that can be a bit tricky.&lt;/p&gt;
 &lt;p&gt;There are plenty of git tutorials and guides to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;While &lt;cite&gt;git&lt;/cite&gt; is surely one of my favorite tools, and increases my productivity
@@ -305,7 +382,7 @@ with conda:&lt;/p&gt;
 &lt;p&gt;Which will set up the remotes, and make the branch track the parent, so
 changes can be pushed with a simple &lt;tt class="docutils literal"&gt;git push&lt;/tt&gt; given the right permissions.&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Blog moved</title><link href="https://datapythonista.github.io/blog/blog-moved.html" rel="alternate"></link><published>2018-09-08T00:00:00+01:00</published><updated>2018-09-08T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-09-08:/blog/blog-moved.html</id><summary type="html">&lt;p&gt;It's been a while since I wanted to move my blog out of blogger.&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Blog moved</title><link href="https://datapythonista.github.io/blog/blog-moved.html" rel="alternate"></link><published>2018-09-08T00:00:00+01:00</published><updated>2018-09-08T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2018-09-08:/blog/blog-moved.html</id><summary type="html">&lt;p&gt;It's been a while since I wanted to move my blog out of blogger.&lt;/p&gt;
 &lt;p&gt;Today I finally did it. :)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world (from Pelican)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -321,4 +398,4 @@ let me create blog posts by simply using restructuredText, or
 Jupyter notebooks.&lt;/p&gt;
 &lt;p&gt;You can check the source code here: &lt;a class="reference external" href="https://github.com/datapythonista/datapythonista.github.io"&gt;https://github.com/datapythonista/datapythonista.github.io&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;More info: &lt;a class="reference external" href="https://blog.getpelican.com/"&gt;https://blog.getpelican.com/&lt;/a&gt;&lt;/p&gt;
-</content></entry></feed>
+</content><category term="misc"></category></entry></feed>

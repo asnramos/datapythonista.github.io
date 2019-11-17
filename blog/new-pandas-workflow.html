@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>New pandas workflow</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://datapythonista.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://datapythonista.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="datapythonista blog Full Atom Feed" />
+
+  <link href="https://datapythonista.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://datapythonista.github.io/blog/theme/css/code_blocks/github.css" rel="stylesheet">
+
+    <!-- CSS specified by the user -->
+
+
+    <link href="https://datapythonista.github.io/blog/../static/css/blog.css" type="text/css" rel="stylesheet" />
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="https://datapythonista.github.io/blog/new-pandas-workflow.html" rel="canonical" />
+
+    <meta name="description" content="Some exciting news. After some years of organizing sprints, and maintaining open source, I've been thinking on a more efficient workflow...">
+
+    <meta name="author" content="Marc Garcia">
+
+    <meta name="tags" content="pandas">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="datapythonista blog"/>
+<meta property="og:title" content="New pandas workflow"/>
+<meta property="og:description" content="Some exciting news. After some years of organizing sprints, and maintaining open source, I've been thinking on a more efficient workflow..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://datapythonista.github.io/blog/new-pandas-workflow.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-11-17 00:00:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://datapythonista.github.io/blog/author/marc-garcia.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="pandas"/>
+<meta property="og:image" content="https://datapythonista.github.io/blog/../static/img/bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "New pandas workflow",
+  "headline": "New pandas workflow",
+  "datePublished": "2019-11-17 00:00:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Marc Garcia",
+    "url": "https://datapythonista.github.io/blog/author/marc-garcia.html"
+  },
+  "image": "https://datapythonista.github.io/blog/../static/img/bg.jpg",
+  "url": "https://datapythonista.github.io/blog/new-pandas-workflow.html",
+  "description": "Some exciting news. After some years of organizing sprints, and maintaining open source, I've been thinking on a more efficient workflow..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span class="blog-logo">
+                <a href="https://datapythonista.github.io/blog/"><img src="../static/img/profile.png" alt="Blog Logo" /></a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">New pandas workflow</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://datapythonista.github.io/blog/author/marc-garcia.html">Marc Garcia</a>
+            | <time datetime="Sun 17 November 2019">Sun 17 November 2019</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://datapythonista.github.io/blog/../static/img/bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Some exciting news. After some years of organizing <a href="https://python-sprints.github.io/">sprints</a>,
+and maintaining open source, I've been thinking on a more efficient workflow for projects with
+high volume of activity, like <a href="https://pandas.pydata.org/">pandas</a>.</p>
+<p>An exaggerated example would be that I want to create 1,600 issues in pandas. One for each
+docstring of the project, with the flaws that we are able to automatically detect. As a
+side know, most of our validations to detect incorrect things in docstrings based on the
+<a href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc standard</a> are now available
+in <code>numpydoc</code> (in master). You can check the
+<a href="https://numpydoc.readthedocs.io/en/latest/validation.html">documentation</a> to
+see how to use it. And the <a href="https://github.com/numpy/numpydoc/blob/master/numpydoc/validate.py#L35">source code</a>
+for the list of errors we validate.</p>
+<p><img alt="" src="/static/img/blog/numpydoc_validation.png"></p>
+<p>Back to the example, <a href="https://developer.github.com/v3/">GitHub API</a> and our validations
+scripts would make it very easy to create those 1,600 GitHub issues. We could create a
+label <code>Docstring errors</code> to identify them, and ask the community for help to fix
+those. The community responded extremely well in the past when we ask them for help.
+500 people joined our <a href="https://numfocus.org/blog/worldwide-pandas-sprint">worldwide documentation sprint</a>.
+So, things seem feasible so far.</p>
+<p>There are just two main problems to make all this work:</p>
+<p>First, there is a small number of maintainers who would have to review, give feedback, and
+merge the contributions. 1,600 pull requests is surely too much for a small group
+of volunteers. We are surely in a much better position now, than when 500 people
+contributed in a single day (it took months to deal with all the pull requests of the sprints).
+We are around 12 active maintainers, compared to 4 at that time.
+And we've been improving on making our workflow more efficient, with the
+CI providing every time better feedback. More accurate, and presented in a better
+way, so first time contributors can detect problems in their work without much
+intervention from maintainers. <a href="https://github.com/features/actions">GitHub Actions</a>
+will be key in making our workflow more efficient for code reviews (things like
+contributors receiving automated emails when the CI detects something that needs to
+be fixed in their work).</p>
+<p>Second, how could people know which of the 1,600 issues are available, and which
+are already in the works by someone else? For small projects, GitHub has an option
+<code>Assignees</code> where members of a scrum team can assign to themselves what they are
+working on. But this is not possible for a project the size of pandas, since only members
+of the organization are able to self-assign issues. And even if we wanted to add
+every possible contributor to the pandas GitHub organization, that would be a huge
+amount of work for maintainers.</p>
+<p>The best solution should come from GitHub. Adding an option so project admins can
+decide whether they want to allow any GitHub user to self-assign issues in their
+projects. I've been discussing this with people at GitHub, and it is something it
+may be added. But not immediately.</p>
+<p>The good news is that with the help of <a href="https://github.com/features/actions">GitHub Actions</a>
+is now possible to achieve the same, in a slightly trickier way. We just added
+to pandas an <a href="https://github.com/pandas-dev/pandas/pull/29648">action to self-assign issues</a>.
+How it works is by just writing a comment with the keyword <code>take</code> to an issue.
+And few seconds later, the action will assign the issue to the commenter. This
+is possible because few months ago GitHub added a feature to let
+<a href="https://github.blog/2019-06-25-assign-issues-to-issue-commenters/">assign issues to issue commenters</a>.
+It is not possible even for maintainers to assign an issue to an arbitrary user.</p>
+<p><img alt="" src="/static/img/blog/github_actions_assign.png"></p>
+<p>With this simple but powerful change, now a much more efficient workflow should
+be possible. The workflow could consist in:</p>
+<ul>
+<li>People interested in contributing to pandas start by <a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html">setting up the environment</a>
+  and learn <a href="https://docs.google.com/presentation/d/1rOSYXZPyMe9KXnbVK_xbJzw_-ijxd6bIxndmvPU6L2o/edit?usp=sharing">how to make an open source contribution</a></li>
+<li>Then they check the list of <a href="https://github.com/pandas-dev/pandas/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22+no%3Aassignee">unassigned good first issues</a></li>
+<li>Once they find one that they want to work on, they write a comment with the keyword <code>take</code> on it</li>
+<li>The issue will disappear from the list of unassigned issues,
+  other people won't waste time checking whether it's available or not</li>
+<li>If the person can't finally move forward (got busy, they are not interested anymore...)
+  they can simply unassign themselves from the issue, and it will be in the list again</li>
+</ul>
+<p>This new workflow scales to the 1,600 issues or more. Before, potential contributors had
+a list with all issues, assigned and not assigned. They had to check each individually for comments
+claiming the issue, deal with ambiguity (do messages like "can I work on this?" mean you're working
+on the issue?), and possibly have some discussion, before they could know if someone else is working in the issue.</p>
+<p>One obvious problem is if people self-assigning an issue, discontinuing work on it, but not
+unassigning the issue. We will see how this works, but even in the worst case, unassigned
+issues will still be easy to find if they exist. For the assigned ones, people can check them,
+and know immediately who to ask to know if work is still going on, or progress was made.
+And to ask if the original assignee is happy to hand over the issue to the new interested contributor.</p>
+<p>Implementing a bot that unassignes issues automatically after N days of inactivity could
+also be an option.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=New pandas workflow&amp;url=https://datapythonista.github.io/blog/new-pandas-workflow.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://datapythonista.github.io/blog/new-pandas-workflow.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://datapythonista.github.io/blog/new-pandas-workflow.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://datapythonista.github.io/blog/tag/pandas.html">pandas</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'datapythonista';
+                    var disqus_shortname = 'datapythonista';
+                    var disqus_identifier = '/new-pandas-workflow.html';
+                    var disqus_url = 'https://datapythonista.github.io/blog/new-pandas-workflow.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/new-pandas-workflow.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://datapythonista.github.io/blog/theme/js/script.js"></script>
+
+    <!-- Script specified by the user -->
+    <script type="text/javascript"  src="https://datapythonista.github.io/blog/../static/js/blog.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-25"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1635939-25', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'datapythonista';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

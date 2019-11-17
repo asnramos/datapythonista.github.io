@@ -6,7 +6,7 @@
 &lt;p&gt;More info at:
 &lt;a href="http://code.google.com/apis/libraries/devguide.html"&gt;http://code.google.com/apis/libraries/devguide.html&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;Second step is to compress you CSS file (or files, but if you are gonna compress it to save bandwidth, probably you want to merge them in one for better performance). There are several websites which compress CSS files online, and for free. The one I found which works best is:
-[http://www.lotterypost.com/css-compress.aspx](http://www.lotterypost.com/css-compress.aspx)&lt;/div&gt;</content><category term="Google App Engine"></category></entry><entry><title>Debugging with PDB and App Engine</title><link href="https://datapythonista.github.io/blog/debugging-with-pdb-and-app-engine.html" rel="alternate"></link><published>2010-12-04T23:48:00+00:00</published><updated>2010-12-04T23:48:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2010-12-04:/blog/debugging-with-pdb-and-app-engine.html</id><summary type="html">&lt;p&gt;Python debugger (pdb) doesn't work on App Engine SDK as usual. After adding to my project:&lt;/p&gt;
+[http://www.lotterypost.com/css-compress.aspx](http://www.lotterypost.com/css-compress.aspx)&lt;/div&gt;</content><category term="misc"></category><category term="Google App Engine"></category></entry><entry><title>Debugging with PDB and App Engine</title><link href="https://datapythonista.github.io/blog/debugging-with-pdb-and-app-engine.html" rel="alternate"></link><published>2010-12-04T23:48:00+00:00</published><updated>2010-12-04T23:48:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2010-12-04:/blog/debugging-with-pdb-and-app-engine.html</id><summary type="html">&lt;p&gt;Python debugger (pdb) doesn't work on App Engine SDK as usual. After adding to my project:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;
 import pdb; pdb.set_trace()
 &lt;/code&gt;&lt;/p&gt;
@@ -34,4 +34,4 @@ import sys
 for attr in ('stdin', 'stdout', 'stderr'):
     setattr(sys, attr, getattr(sys, '&lt;strong&gt;%s&lt;/strong&gt;' % attr))
 pdb.set_trace()
-&lt;/code&gt;&lt;/p&gt;</content><category term="Google App Engine"></category></entry></feed>
+&lt;/code&gt;&lt;/p&gt;</content><category term="misc"></category><category term="Google App Engine"></category></entry></feed>

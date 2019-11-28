@@ -1,5 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - pandas</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/pandas.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-11-17T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>New pandas workflow</title><link href="https://datapythonista.github.io/blog/new-pandas-workflow.html" rel="alternate"></link><published>2019-11-17T00:00:00+00:00</published><updated>2019-11-17T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-17:/blog/new-pandas-workflow.html</id><summary type="html">&lt;p&gt;Some exciting news. After some years of organizing &lt;a href="https://python-sprints.github.io/"&gt;sprints&lt;/a&gt;,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - pandas</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/pandas.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-11-28T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>An update on the pandas documentation</title><link href="https://datapythonista.github.io/blog/pandas-documentation-update.html" rel="alternate"></link><published>2019-11-28T00:00:00+00:00</published><updated>2019-11-28T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-28:/blog/pandas-documentation-update.html</id><summary type="html">&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Some context&lt;/h2&gt;
+&lt;p&gt;This post is mainly a technical post on what's the status of the pandas documentation.
+But let me provide a bit of context on where this comes from.&lt;/p&gt;
+&lt;p&gt;It's a personal opinion, but I think pandas is one of the clearest examples …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
+&lt;h2&gt;Some context&lt;/h2&gt;
+&lt;p&gt;This post is mainly a technical post on what's the status of the pandas documentation.
+But let me provide a bit of context on where this comes from.&lt;/p&gt;
+&lt;p&gt;It's a personal opinion, but I think pandas is one of the clearest examples of how open
+source is transforming the data world (together with some other projects like scikit-learn,
+Jupyter, R...). Is likely that pandas contributed to the huge growth of
+Python, a language that not many people knew about when pandas development started.&lt;/p&gt;
+&lt;p&gt;And I think its documentation has been the clearest example of the paradox of open
+source software. While pandas users were growing to the millions, and it was adopted in thousands
+of companies (including the largest companies in the world), almost nobody spent any time
+or money in its documentation (which requires a lot of work to be of high quality). It's surely not to blame the
+very few people (3 or 4 at times) who were maintaining the project. They had enough dealing with thousands of
+issues, updates in the many and fast changing dependencies, releasing new versions... While also
+implementing new features and fixing bugs themselves. And even more considering that most of that
+work was done as volunteers, in evenings after work or in weekends.&lt;/p&gt;
+&lt;p&gt;More than 2 years ago I sent to the project my first pull request, fixing a single docstring
+(one of the around 2,000 in the project). And decided to spend a significant amount of
+my also volunteer time (after work and during weekends) in improving that part. That also
+was one of the main reasons for starting the &lt;a href="https://python-sprints.github.io"&gt;Python sprints&lt;/a&gt;
+group.&lt;/p&gt;
+&lt;p&gt;More than two years later, not much changed (apparently). But if you care about my opinion,
+I'm sure very soon pandas will have one of the best documentations of any open source project. This
+post explains all the work done by hundreds of people in the last couple of years, and the work
+that is still missing, and how we are going to approach it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you work for a company that is making money using pandas, and that would be more productive
+and make even more money if pandas documentation was better, please contact a pandas maintainer
+including &lt;a href="mailto:garcia.marc@gmail.com"&gt;myself&lt;/a&gt; or &lt;a href="https://www.numfocus.org"&gt;NumFOCUS&lt;/a&gt;.
+We are happy to discuss funding opportunities, including small grants or helping your company
+hire people to work on pandas.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;The problem with the docstrings&lt;/h2&gt;
+&lt;p&gt;The pandas API is huge, and includes around 2,000 functions, methods, classes, attributes...
+Each of them with a page in the documentation.
+Given the very reduced number of developers pandas had, and the huge demand and urgency for a dataframe
+library in Python, most of those API pages couldn't be created with high standards when the
+features were implemented. See for example the
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.resample.Resampler.last.html"&gt;Resampler.last&lt;/a&gt;
+page.&lt;/p&gt;
+&lt;p&gt;It may not be obvious for people who haven't contributed to a project like pandas before,
+but improving a docstring, and make it as useful for readers as possible, it's not 5 minutes
+of work. Based on the work done by lots of contributors over the last year, I would estimate
+it takes around 1 day of work of an experienced pandas user. You can see the docstring of
+&lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.resample.Resampler.bfill.html"&gt;Resampler.bfill&lt;/a&gt;
+to see what I'd consider a good docstring.&lt;/p&gt;
+&lt;p&gt;Considering this estimate of 1 day per docstring, and the around 2,000 docstrings, it's
+easy to calculate that it'd take around 8 years for a single person working full time,
+to have all them fixed. And that excludes the time of maintainers to review the changes,
+provide feedback, merge...&lt;/p&gt;
+&lt;h2&gt;The pandas documentation sprint&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/pandas_sprint.png"&gt;&lt;/p&gt;
+&lt;p&gt;As it's obvious that a single person can't do much, one of the things that was tried
+was to organize a &lt;a href="https://python-sprints.github.io/pandas/"&gt;worldwide pandas sprint&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The sprint was extremely successful in many ways. 30 local users groups participated,
+from places as diverse as Korea, Hong Kong, India, Turkey, Kenya, Nigeria, Argentina
+or Brazil, besides many cities in Europe and US. Difficult to say how many people
+participated, but we estimate there where around 500 people helping make pandas
+documentation for a whole Saturday.&lt;/p&gt;
+&lt;p&gt;I think there are no words to describe how amazing that is. How many people offered
+to organize sprints with their local groups. And how many people joined them in every
+sprint. The organizers had to prepare the event for weeks, both for logistics but also
+for the technical part of leading a lot of people in their first open source contributing.&lt;/p&gt;
+&lt;p&gt;A big responsible for this success was &lt;a href="https://numfocus.org/"&gt;NumFOCUS&lt;/a&gt;. For several
+years now NumFOCUS has done extraordinary efforts on building the PyData community.
+Having a connected network of more than 150 user groups made it very easy to communicate
+and reach all the people who could be interested.&lt;/p&gt;
+&lt;p&gt;The feedback I received from the participants and organizers was very positive, and people
+enjoyed the experience (which I personally think it's much more important than the
+contributions made). And there were around 200 documentation pages that were fixed
+because of the sprint (10% of the total).&lt;/p&gt;
+&lt;p&gt;But not everything was so positive. The sprint also made evident that the problem of
+fixing the documentation was not the number of contributors. The bottleneck happened
+to be the maintainers. The sprint created a total disruption of the project for more than two
+weeks. And this period wasn't longer because the maintainers were spending day and night
+reviewing the pull requests from the sprint. In many cases it was the maintainers who
+had to finish the work started during the sprint. Many pull requests contained great
+work, but were discontinued, and they required important changes that had to be done
+by the maintainers. The last PR from the sprint was merged almost a year later than
+the sprint.&lt;/p&gt;
+&lt;p&gt;More information about the sprint can be found in this
+&lt;a href="https://numfocus.org/blog/worldwide-pandas-sprint"&gt;NumFOCUS write up&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;The validation script&lt;/h2&gt;
+&lt;p&gt;We anticipated before the sprint, that reviewing the contributions would be a lot
+of work. And we developed a script to automate part of it. The idea was to automatically
+detect things like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The documented parameters of a function need to match the actual parameters in the signature&lt;/li&gt;
+&lt;li&gt;Conventions like starting sentences with a capital letter or finishing with a period&lt;/li&gt;
+&lt;li&gt;Ensure that some sections we'd like to always have are present (like Examples)&lt;/li&gt;
+&lt;li&gt;Formats that make Sphinx render the documentation incorrectly, like missing spaces before the
+  colon between a parameter name and its type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We managed to have several of these ready for the sprint. But to keep all the docstrings consistent
+and rendering correctly, we needed many more. Many people spent a significant amount of time adding
+new checks to the script, and we are currently able to automatically detect
+&lt;a href="https://github.com/pandas-dev/pandas/blob/master/scripts/validate_docstrings.py#L63"&gt;more than 40 possible problems in docstrings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Of course not everything can be validated, think of correct grammar, wrong, inaccurate or misleading
+information, examples that are not clear... But validating almost every formatting issue automatically
+will definitely save a lot of time of reviewers. Who will be able to focus on the things that
+can't be automated.&lt;/p&gt;
+&lt;p&gt;Some other projects had interest in using our validation script, so it's been recently moved to
+&lt;a href="https://github.com/numpy/numpydoc"&gt;numpydoc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/numpydoc_validation.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Continuous Integration&lt;/h2&gt;
+&lt;p&gt;During the sprint, we provided clear instructions, and we had mentors in each of the 30 different
+locations. So, everybody was probably aware that the validation script was one of the main things
+they had to check. But regular contributors don't get this sort of induction. So, ideally we would
+like to run the checks automatically in the CI, so contributors are aware of any problem in their
+proposed changes. But there are some things to consider.&lt;/p&gt;
+&lt;p&gt;With Travis, our main CI system, the errors ended up in a huge log, that only experienced
+pandas developers are able to understand. See for example &lt;a href="https://travis-ci.org/pandas-dev/pandas/jobs/484898115"&gt;this job&lt;/a&gt;
+and make sure you wait until it's fully loaded. :)&lt;/p&gt;
+&lt;p&gt;Luckily, at the time our script was being implemented, Numba set up Azure Pipelines for their CI, and we
+decided to use it to complement Travis. The main reason was that we required more computational
+power for the huge test set of pandas, and the large number of builds. But, I think the clarity
+on how the errors can be reported, is as convenient as the 30 concurrent jobs the Azure team
+offered us. Compare this with the previous Travis log:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://user-images.githubusercontent.com/10058240/47961709-1ca90800-e008-11e8-80d7-cccc2c2e5776.png"&gt;&lt;/p&gt;
+&lt;p&gt;We were very ambitious, and somehow pioneers in what we were doing, and it wasn't
+easy to get what we wanted. But The Azure team was extremely helpful, and the final
+presentation of errors in docstrings, as well as the linting errors and others was
+much clearer. And friendly for first time contributors.&lt;/p&gt;
+&lt;p&gt;Azure pipelines was an improvement, but we still had some challenges. The integration
+with GitHub wasn't great, and it required following two links and navigating a somehow
+confusing interface to arrive to the page where the errors were being presented in a
+better interface than TravisCI.&lt;/p&gt;
+&lt;p&gt;Just few days ago we moved this docstring validation, among other things, to
+&lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;. So far the experience has been
+great, and we keep the same advantages as with Pipelines, and also we have a better
+integration of the CI with GitHub. And the configuration is also simpler and a bit
+more intuitive than with Pipelines.&lt;/p&gt;
+&lt;p&gt;We are still figuring out how to notify contributors with a human-readable message
+about problems in the CI. Since only experienced contributors know how to find the
+problems by themselves. And that's taking time from the reviewers, for a task that
+could be easily automated. With GitHub Actions is very easy to write comments in
+a pull request, so the only remaining challenge is to obtain all the failures in
+all the jobs in a run. But hopefully that's not too complex and we can have it in
+place soon.&lt;/p&gt;
+&lt;p&gt;Another important thing that the continuos integration can do for us, is to let
+us visualize the documentation before being merged. In many cases, small details
+make the documentation render in an incorrect way. Like a bold style that doesn't
+finish when it's expected to finish. Or a broken table that renders as plain text.&lt;/p&gt;
+&lt;p&gt;This has been challenging until now, since CI systems don't do this automatically,
+and it's tricky to implement manually. CircleCI provided this feature, but to
+access the rendered documentation you had to know the url and replace the id of
+your build on it. Maintainers could do that in a not very efficient way, but
+first-time contributors couldn't guess.&lt;/p&gt;
+&lt;p&gt;Implementing it manually has a main challenge. The CI is usually only able to
+access passwords and keys when a pull request is merged. Otherwise a malicious
+pull request could access the key and leak it. An option to overcome this limitation
+would be to host in a server a GitHub application that receives a webhook when
+a pull request is opened or updated, and its docs are built. After being triggered
+it would fetch the docs, and publish them somewhere, using a key only accessible
+in the server.&lt;/p&gt;
+&lt;p&gt;Implementing that was in our backlog for a while. But there is another problem.
+Where to host all these copies of the documentation. We use GitHub pages to
+host the latest version of our docs. But since Git/GitHub track all the history
+of changes, the repo would grow huge very quickly if we add all our docs (around
+50Mb) for every pull request.&lt;/p&gt;
+&lt;p&gt;The solution to this came easier than expected, since GitHub Actions is able to
+access "secrets" from pull request builds. These secrets are private values added
+to a repo, and can be used to store our hosting key. And &lt;a href="https://www.ovh.co.uk/"&gt;OVH&lt;/a&gt;
+has recently sponsored a new pandas cloud hosting, were we can temporary store
+all these versions of the docs. This is being implemented now, and with some
+luck should be in production in just couple of days. GitHub Actions will also
+make very simple to delete the docs for a PR once it is merged or closed.&lt;/p&gt;
+&lt;h2&gt;Validating docstrings in the CI&lt;/h2&gt;
+&lt;p&gt;Two key pieces to validate contributions to the pandas docstrings are in place:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A validation script with lots of checks&lt;/li&gt;
+&lt;li&gt;A CI system friendly with first time contributors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But there is a last piece needed. If we activate the validation in the CI, we will
+have 1,000 docstrings, or more, reporting errors in the CI for every PR. Basically,
+we will be reported of every error in every docstring that needs to be fixed every
+time the CI runs.&lt;/p&gt;
+&lt;p&gt;Would be useful to be able to get the errors being introduced, so no more errors
+are added, while we fix the ones we already have. But this is not feasible (would be
+too complex and too slow).&lt;/p&gt;
+&lt;p&gt;This leaves us in a unfortunate position, of only being able to validate what has
+already been fixed. Which is extremely useful, as we can guarantee that things don't
+get worse. But it doesn't solve our problem of improving the docstrings that need it yet.&lt;/p&gt;
+&lt;p&gt;So, what can be done? I think it's useful to divide the docstring checks in two
+different categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The pure formatting things (like having periods at the end of sentences)&lt;/li&gt;
+&lt;li&gt;The ones that require knowledge of pandas and the object being documented
+  (like adding examples of how to use an function, or adding an undocumented parameter)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The ones in the first category are somehow easy to fix. And many can be fixes at a time
+(in a single pull request), working in one after the other, without stopping much to
+understand things.&lt;/p&gt;
+&lt;p&gt;Once all the errors of a kind have been fixed, we can start validating that specific
+error in the CI. And we guarantee that no more errors of that kind will ever happen.&lt;/p&gt;
+&lt;p&gt;And what is even better. Once all those formatting errors are fixed, we can start
+working on the docstrings, one at a time. Where a person spends enough time understanding
+the function being documented to become an expert. To a point where it can focus on
+improving the content, writing a nice summary, useful examples, and document parameters
+in an accurate way. And that person won't need to become an expert in reStructuredText
+formatting, because the CI warn about any issue. And the person will be able to fix
+any problem without requiring time from a maintainer.&lt;/p&gt;
+&lt;p&gt;We already completely fixed several of the more than 40, and we validate that the errors are
+not added again:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GL03&lt;/strong&gt;: Use of double blank lines when one would be expected&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL04&lt;/strong&gt;: Private classes mentioned in public docstrings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL05&lt;/strong&gt;: Tabs used instead of 4 spaces&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL06&lt;/strong&gt;: An unknown section is found&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL07&lt;/strong&gt;: Sections in the wrong order&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL09&lt;/strong&gt;: Deprecation warning in the wrong position&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GL10&lt;/strong&gt;: Sphinx directives incorrectly formatted&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SS04&lt;/strong&gt;: Summary contains heading whitespaces&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SS05&lt;/strong&gt;: Summary staring with infinitive verb, not third-person&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR03&lt;/strong&gt;: Parameters are in the wrong order (compared to the signature)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR04&lt;/strong&gt;: Parameters without type&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR05&lt;/strong&gt;: Parameter type finishing with a period (it shouldn't)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR10&lt;/strong&gt;: Missing space before colon splitting parameter name and type&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RT01&lt;/strong&gt;: No Returns section&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RT04&lt;/strong&gt;: Returns description should start with a capital letter&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RT05&lt;/strong&gt;: Returns description should finish with a period&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SA01&lt;/strong&gt;: No See Also section found&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SA02&lt;/strong&gt;: See Also description should finish with a period&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SA03&lt;/strong&gt;: See Also description should start with a capital letter&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SA05&lt;/strong&gt;: Unneeded prefix in See Also section object&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EX04&lt;/strong&gt;: pandas or NumPy explicitly imported in the examples (we assume they are always imported)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those validations have been added to the &lt;a href="https://github.com/pandas-dev/pandas/blob/master/ci/code_checks.sh#L289"&gt;code_checks.sh&lt;/a&gt;
+script, which is responsible for many code quality checks (linting, typing, avoidance of unwanted patterns...).&lt;/p&gt;
+&lt;p&gt;But there are still many errors that need to be fixed, including formatting errors.&lt;/p&gt;
+&lt;p&gt;We are able to get the list of all the errors that we can automatically detect,
+with the same script that analyzes a docstring, but without passing an object as a parameter::&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./scripts/validate_docstrings.py --format&lt;span class="o"&gt;=&lt;/span&gt;json &amp;gt; docstrings.json
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will output a JSON file that can easily be loaded into pandas,
+and see what needs to be fixed:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;docstrings.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;orient&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;errors&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;err_list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;err_list&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_dummies&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort_values&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;barh&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/pandas_docstring_errors.png"&gt;&lt;/p&gt;
+&lt;p&gt;We can see how there are 18 different validations with docstrings that don't pass them.&lt;/p&gt;
+&lt;p&gt;The list of all the validations and their error codes can be found in the same
+&lt;a href="https://github.com/pandas-dev/pandas/blob/master/scripts/validate_docstrings.py#L77"&gt;validation script code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We can see for example, how the error &lt;code&gt;GL08&lt;/code&gt;, happening more than 500 times, means that
+the objects don't have a docstring at all. See for example
+&lt;a href="http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.empty.html"&gt;Series.empty&lt;/a&gt;
+Or the second most frequent error, &lt;code&gt;RT03&lt;/code&gt;
+means that it is not documented what is being returned (the return type is present, but
+there is no description on what's the returned object).&lt;/p&gt;
+&lt;p&gt;In total we have 2,441 errors that we can detect automatically. That includes docstrings that
+need to be fully created. And creating them requires a lot of time, since there is no documentation
+of them, and analyzing the source code, experimenting... is required.&lt;/p&gt;
+&lt;h2&gt;Where do we come from?&lt;/h2&gt;
+&lt;p&gt;Analyzing the docstrings of past versions of pandas we can see that pandas 0.23 had
+7,136 errors, with the current validations. pandas 0.23 was released on the 16th of
+May of 2018, couple of month after the worldwide sprint with 500 people. Most of the
+work of that sprint was already present in that version.&lt;/p&gt;
+&lt;p&gt;This is the detail of errors at that time:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/pandas_docstring_errors_023.png"&gt;&lt;/p&gt;
+&lt;p&gt;So, in 18 months we fixed two thirds of the errors. Assuming it takes the same amount
+of time to fix every error, and that we continue at the same pace, in 9 months more we
+should have all them fixed. This would amazing, but it's clearly false that all errors
+require the same time, and it's obvious that we started by the easy ones. But we are
+getting closer.&lt;/p&gt;
+&lt;h2&gt;Parallelization, a game changer&lt;/h2&gt;
+&lt;p&gt;Our work is every time more challenging and time consuming. Remember that we started with
+small formatting changes like adding a period at the end of a sentence, to write full
+docstrings. So, we need to become smarter and more efficient on how we work on the
+documentation. And the most important part is being able to work in parallel.&lt;/p&gt;
+&lt;p&gt;Of the around 2,000 docstrings, around 1,400 still have errors (considering errors detected
+by the script). Imagine that tomorrow we want to start working on all them. One of the main
+problems would be to detect who works on what, and avoid duplicate work. Many people volunteered
+in the past to help make the pandas documentation better, and there may be 1,400 people
+out there who could be happy to help if they knew exactly what to do.&lt;/p&gt;
+&lt;p&gt;How this is usually solved in open source is by creating issues. Then people assigned the
+issue they want to work to themselves, and as people join the party, they check in the
+list of unassigned issues what else need to be done.&lt;/p&gt;
+&lt;p&gt;Unfortunately, a workflow as simple as this has been problematic in GitHub. While GitHub
+provides a nice interface for issues, and implements the functionality of assignees, it's
+limited to members of the organization (core developers). While this is useful for small
+corporate projects, assignees is unused in pandas, and people have been assigning them
+issues by mentioning their interest in a comment. Which it kind of works, but it doesn't
+let people find unassigned issues in an easy way.&lt;/p&gt;
+&lt;p&gt;Recently, we found a hack in pandas, that people is starting to use. With GitHub actions,
+we are able to assign issues to people who adds a comment with the exact word `take.
+While this is far from optimal, since most users won't be aware of this, it can be very
+useful when organizing sprints or coordinated events, where we can communicate with
+contributors. We can also write in the issue description about this new feature, so
+creating a batch of issues automatically, that we expect people to assign to themselves
+seems feasible.&lt;/p&gt;
+&lt;p&gt;That's a game changer in parallelizing the work, since it makes the logistics much
+simpler in coordinating the contributors.&lt;/p&gt;
+&lt;p&gt;There are still some challenges:&lt;/p&gt;
+&lt;p&gt;In many cases, pandas has templates for a docstring, that are reused in more
+than one object. So different objects can use the same docstring, and it's not
+easy to identify which. Creating issues automatically for each object can still
+cause overlap in the work.&lt;/p&gt;
+&lt;p&gt;While many things can be automated, the main bottleneck are still the reviews of
+the changes. There are few people who has the knowledge and experience in pandas
+to provide feedback on whether the changes to the documentation are reasonable.
+And who has the permissions to merge changes into pandas. And almost all them
+are volunteer, and need to take care of other obligations like full time jobs
+and family.&lt;/p&gt;
+&lt;h2&gt;The future&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_babies.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Exciting times are coming for the pandas documentation. Not only the content, but
+also a whole new theme is being implemented. So, soon the documentation will
+look much better.&lt;/p&gt;
+&lt;p&gt;The CI is getting closer to a level where we can automate as much as possible,
+and be very efficient in coordinating the documentation efforts. As well as
+let first-time contributors be quite autonomous, and progress independently on
+their work until a maintainer can really add value.&lt;/p&gt;
+&lt;p&gt;Not only the number of maintainers in the project has been growing significantly
+in the last couple of years, but a new role of triaggers has been implemented,
+which can be useful in this effor.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://numfocus.org/"&gt;NumFOCUS&lt;/a&gt; has recently awarded us a small development
+grant to work on the documentation. And not only will help with the documentation
+but hopefully will address a problem as big as it, diversity. A group of people
+from groups underrepresented as pandas contributors will be helping with the
+documentation, and organizing sprints in different locations to help and
+encourage more people to contribute to it.&lt;/p&gt;
+&lt;p&gt;Increasing the diversity of the background of the contributors, will not only
+help with the quantity of the documentation pages, but also its quantity.
+pandas should be useful for a wide variety of people. If the documentation is
+made and reviewed by people from different backgrounds (academic backgrounds,
+geography, gender...) it will be clearer and more useful to more people, and
+will better accomplish its goal.&lt;/p&gt;
+&lt;p&gt;The sprints are likely to be in Jakarta, Cairo and Berlin. If you can increase
+the diversity of the pandas contributors and want to participate, feel free
+to contact me for more details and updates.&lt;/p&gt;
+&lt;p&gt;If you would like to organize a pandas documentation sprint for minorities in
+a different location, please also get in touch. We are unlikely to be able to
+provide funds, but we can help you with everything else.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;And if your company would benefit from a better pandas documentation, please
+consider supporting the project. From funding to the project, to funding of
+specific developments. And also you can consider hosting an event in your
+office, letting your employees spend part of their time working on pandas,
+providing in-kind donations, or anything you can think of. Please message
+me or any other maintainer to discuss about opportunities.&lt;/strong&gt;&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>New pandas workflow</title><link href="https://datapythonista.github.io/blog/new-pandas-workflow.html" rel="alternate"></link><published>2019-11-17T00:00:00+00:00</published><updated>2019-11-17T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-17:/blog/new-pandas-workflow.html</id><summary type="html">&lt;p&gt;Some exciting news. After some years of organizing &lt;a href="https://python-sprints.github.io/"&gt;sprints&lt;/a&gt;,
 and maintaining open source, I've been thinking on a more efficient workflow for projects with
 high volume of activity, like &lt;a href="https://pandas.pydata.org/"&gt;pandas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;An exaggerated example would be that I want to create 1,600 issues in pandas. One for each
@@ -76,7 +429,7 @@ issues will still be easy to find if they exist. For the assigned ones, people c
 and know immediately who to ask to know if work is still going on, or progress was made.
 And to ask if the original assignee is happy to hand over the issue to the new interested contributor.&lt;/p&gt;
 &lt;p&gt;Implementing a bot that unassignes issues automatically after N days of inactivity could
-also be an option.&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry><entry><title>Dataframe summit @ EuroSciPy write up</title><link href="https://datapythonista.github.io/blog/dataframe-summit-at-euroscipy.html" rel="alternate"></link><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-09-11:/blog/dataframe-summit-at-euroscipy.html</id><summary type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
+also be an option.&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>Dataframe summit @ EuroSciPy write up</title><link href="https://datapythonista.github.io/blog/dataframe-summit-at-euroscipy.html" rel="alternate"></link><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-09-11:/blog/dataframe-summit-at-euroscipy.html</id><summary type="html">&lt;p&gt;Last week took place in Bilbao, Spain, &lt;a href="https://www.euroscipy.org/2019/"&gt;EuroSciPy 2019&lt;/a&gt;.
 This year we introduced the &lt;a href="https://www.euroscipy.org/2019/maintainers.html"&gt;maintainers track&lt;/a&gt;
 a room dedicated to discussions among maintainers. The idea is similar to the 
 &lt;a href="https://en.wikipedia.org/wiki/Birds_of_a_feather_(computing)"&gt;birds of a feather&lt;/a&gt; or unconference
@@ -164,7 +517,7 @@ list wasn't used by the participants (except the pandas maintainers), and it did
 to be the appropriate place.&lt;/p&gt;
 &lt;p&gt;Another idea would be to organize another bigger dataframe summit in the future. It was
 proposed to be hosted somewhere in the Caribbean (ok, it was me who proposed that, and
-everybody else laughed, but here I leave it again). :)&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
+everybody else laughed, but here I leave it again). :)&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>pandas: The two cultures</title><link href="https://datapythonista.github.io/blog/pandas-the-two-cultures.html" rel="alternate"></link><published>2019-07-22T23:26:00+01:00</published><updated>2019-07-22T23:26:00+01:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2019-07-22:/blog/pandas-the-two-cultures.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="/static/img/blog/two_cultures/leo_breiman.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.stat.berkeley.edu/~breiman/"&gt;Leo Breiman&lt;/a&gt; was a distinguished statistician at
 UC Berkeley, known among other things for his major contributions to CART (decision trees),
 and ensemble techniques, mainly bootstrap aggregation. Combining both, he was able to define
@@ -562,7 +915,7 @@ who manages the pandas funding, can assist with any question, and
 is in direct contact with the pandas maintainers. Besides hiring someone
 in your own team, you could also provide funds to develop pandas that
 are managed by NumFOCUS. Also feel free to &lt;a href="mailto:garcia.marc@gmail.com"&gt;contact me&lt;/a&gt;
-directly if you want more advice, and are interested in this.&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry><entry><title>#pandasSprint write-up</title><link href="https://datapythonista.github.io/blog/pandassprint-write-up.html" rel="alternate"></link><published>2018-03-22T01:57:00+00:00</published><updated>2018-03-22T01:57:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2018-03-22:/blog/pandassprint-write-up.html</id><summary type="html">&lt;p&gt;The past 10th of March took place &lt;a href="https://python-sprints.github.io/pandas/"&gt;#pandasSprint&lt;/a&gt;.
+directly if you want more advice, and are interested in this.&lt;/p&gt;</content><category term="pandas"></category></entry><entry><title>#pandasSprint write-up</title><link href="https://datapythonista.github.io/blog/pandassprint-write-up.html" rel="alternate"></link><published>2018-03-22T01:57:00+00:00</published><updated>2018-03-22T01:57:00+00:00</updated><author><name>Marc</name></author><id>tag:datapythonista.github.io,2018-03-22:/blog/pandassprint-write-up.html</id><summary type="html">&lt;p&gt;The past 10th of March took place &lt;a href="https://python-sprints.github.io/pandas/"&gt;#pandasSprint&lt;/a&gt;.
 To the best of my knowledge, an unprecedented kind of event, where around 500 people worked
 together in improving the documentation of the popular pandas library.&lt;/p&gt;
 &lt;p&gt;As one of the people involved in the organization of the event, I wanted to write …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past 10th of March took place &lt;a href="https://python-sprints.github.io/pandas/"&gt;#pandasSprint&lt;/a&gt;.
@@ -840,4 +1193,4 @@ this week. Man AHL is hosting this great &lt;a href="http://ahl.com/hackathon"&g
 in one month. I hope to see other user groups organizing sprints in the future.
 And about another worldwide sprint... May be in some months we could do a PyData
 Festival and have 10,000 people contributing to 20 different projects during a
-whole weekend? :)&lt;/p&gt;</content><category term="misc"></category><category term="pandas"></category></entry></feed>
+whole weekend? :)&lt;/p&gt;</content><category term="pandas"></category></entry></feed>

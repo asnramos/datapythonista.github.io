@@ -412,9 +412,10 @@ require the same time, and it's obvious that we started by the easy ones. But we
 getting closer.</p>
 <h2>Parallelization, a game changer</h2>
 <p>Our work is every time more challenging and time consuming. Remember that we started with
-small formatting changes like adding a period at the end of a sentence, to write full
-docstrings. So, we need to become smarter and more efficient on how we work on the
-documentation. And the most important part is being able to work in parallel.</p>
+small formatting changes like adding a period at the end of a sentence, and we are going 
+to write full docstrings. So, we need to become smarter and more efficient on how we work on the
+documentation. And the most important part is being able to work in parallel, since there is
+not much a single person can do.</p>
 <p>Of the around 2,000 docstrings, around 1,400 still have errors (considering errors detected
 by the script). Imagine that tomorrow we want to start working on all them. One of the main
 problems would be to detect who works on what, and avoid duplicate work. Many people volunteered
@@ -437,8 +438,10 @@ contributors. We can also write in the issue description about this new feature,
 creating a batch of issues automatically, that we expect people to assign to themselves
 seems feasible.</p>
 <p>That's a game changer in parallelizing the work, since it makes the logistics much
-simpler in coordinating the contributors.</p>
-<p>There are still some challenges:</p>
+simpler in coordinating the contributors. See more information about this new
+workflow in this <a href="https://datapythonista.github.io/blog/new-pandas-workflow.html">recent blog post</a>
+I wrote.</p>
+<p>But there are still some challenges:</p>
 <p>In many cases, pandas has templates for a docstring, that are reused in more
 than one object. So different objects can use the same docstring, and it's not
 easy to identify which. Creating issues automatically for each object can still

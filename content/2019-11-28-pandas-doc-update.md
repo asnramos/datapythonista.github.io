@@ -339,9 +339,10 @@ getting closer.
 ## Parallelization, a game changer
 
 Our work is every time more challenging and time consuming. Remember that we started with
-small formatting changes like adding a period at the end of a sentence, to write full
-docstrings. So, we need to become smarter and more efficient on how we work on the
-documentation. And the most important part is being able to work in parallel.
+small formatting changes like adding a period at the end of a sentence, and we are going 
+to write full docstrings. So, we need to become smarter and more efficient on how we work on the
+documentation. And the most important part is being able to work in parallel, since there is
+not much a single person can do.
 
 Of the around 2,000 docstrings, around 1,400 still have errors (considering errors detected
 by the script). Imagine that tomorrow we want to start working on all them. One of the main
@@ -369,9 +370,11 @@ creating a batch of issues automatically, that we expect people to assign to the
 seems feasible.
 
 That's a game changer in parallelizing the work, since it makes the logistics much
-simpler in coordinating the contributors.
+simpler in coordinating the contributors. See more information about this new
+workflow in this [recent blog post](https://datapythonista.github.io/blog/new-pandas-workflow.html)
+I wrote.
 
-There are still some challenges:
+But there are still some challenges:
 
 In many cases, pandas has templates for a docstring, that are reused in more
 than one object. So different objects can use the same docstring, and it's not

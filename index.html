@@ -1,789 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Marc Garcia - @datapythonista</title>
-
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="static/css/freelancer.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Marc Garcia - datapythonista - pandas consultant, trainer and core developer</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="/static/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
 </head>
 
-<body id="page-top" class="index">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">@datapythonista</a>
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+        <ul class="nav-menu list-unstyled">
+          <li><a href="#header" class="smoothScroll">Home</a></li>
+          <li><a href="#about" class="smoothScroll">About</a></li>
+          <li><a href="#resources" class="smoothScroll">Talks and articles</a></li>
+          <li><a href="/blog/" class="smoothScroll">Blog</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div id="header" class="home">
+    <div class="container">
+      <div class="header-content">
+        <h1><span class="typed">Marc Garcia</span></h1>
+        <p>pandas consultant, trainer and core developer</p>
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://twitter.com/datapythonista"><i class="ion-social-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/datapythonista/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://github.com/datapythonista/"><i class="ion-social-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="paddsection">
+    <div class="container">
+      <div class="row justify-content-between">
+
+        <div class="col-lg-4 ">
+          <div class="div-img-bg">
+            <div class="about-img">
+              <img src="/static/img/me.jpg" class="img-responsive" alt="me">
             </div>
+          </div>
+        </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Projects</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#talks">Talks</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="/blog/">Blog</a>
-                    </li>
+        <div class="col-lg-7">
+          <div class="about-descr">
+
+            <p class="p-heading">Marc Garcia</p>
+            <p class="separator">
+                pandas consultant, trainer and core developer
+                <ul>
+                    <li>+12 years experience in Python</li>
+                    <li>+6 years experience in data science</li>
+                    <li>pandas core developer</li>
+                    <li>NumFOCUS project sustainability award 2019</li>
+                    <li>EuroSciPy 2019 co-organizer</li>
+                    <li>pandas new contributor award 2018</li>
+                    <li>Python Software Foundation Fellow</li>
+                    <li>Master degree in artificial intelligence</li>
+                    <li>Master degree in finance</li>
+                    <li>Fluent in English, Spanish, Portuguese and Catalan</li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            </p>
+
+          </div>
+
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive img-circle" style="border: solid 3px white;" src="static/img/profile.png" alt="">
-                    <div class="intro-text">
-                        <span class="name">Marc Garcia</span>
-                        <hr class="star-primary">
-                        <span class="skills">Data scientist | pandas core developer | +12 years experience in Python | Python fellow</span>
-                        <br/>
-                        <span class="skills">
-                            <a href="https://twitter.com/datapythonista?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @datapythonista</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <ul class="text-center list-unstyled">
-                        <li><i class="fa fa-linux"></i> Open source developer and mentor</li>
-                        <li><i class="fa fa-cogs"></i> Pythonista with +12 years of experience</li>
-                        <li><i class="fa fa-area-chart"></i> Data Scientist and Machine learning specialist</li>
-                        <li><i class="fa fa-graduation-cap"></i> Master Degree in Artificial Intelligence, Technical University of Catalonia</li>
-                        <li><i class="fa fa-graduation-cap"></i> International Master Degree in Finance, EADA Business School</li>
-                        <li><i class="fa fa-globe"></i> Fluent in English, Spanish, Portuguese and Catalan</li>
-                    </ul>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="docs/Marc_Garcia_CV.pdf" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download CV
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Main projects</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal0" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/baml.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/logitravel.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/unilever.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/ntt.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/lacaixa.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="static/img/portfolio/google.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Talks -->
-    <section id="talks">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Talks</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-
-
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/KtGY96fqP7s" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="https://github.com/datapythonista/pandas_ecosystem">pandas ecosystem 2019</a></h3>
-                  <p>PyConX, Italy, 2019</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/hK6o_TDXXN8" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="https://github.com/datapythonista/towards_pandas_1">Towards pandas 1.0</a></h3>
-                  <p>PyData London meetup</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/F37fV0uFf60" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="/docs/pandas-internals/">Demystifying pandas internals</a></h3>
-                  <p>PyData London, 2018</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="//www.slideshare.net/slideshow/embed_code/key/q1Huq5Lwz0f9Ok" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Data visualization in Python</h3>
-                  <p>Data visualisation summit, London, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/GVDvnSvGyBs" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="/ocs/odsc2017/">Bayesian A/B testing</a></h3>
-                  <p>ODSC Europe, London, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="/docs/pyconpl2017/" frameborder="0"></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="/docs/pyconpl2017">Finding love in the age of big data</a></h3>
-                  <p>PyConPL, Ossa, Poland, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/jufpfjjpgUU" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>A gentle introduction to data science</h3>
-                  <p>EuroPython, Rimini, Italy, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="/docs/pydatabcn-pub-quiz/" frameborder="0"></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3><a href="/docs/pydatabcn-pub-quiz">PyData pub quiz</a></h3>
-                  <p>PyData Barcelona, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="//www.slideshare.net/slideshow/embed_code/key/3DIxOomeCcJwTe" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Replicating the human brain:<br/>Deep learning in action</h3>
-                  <p>PyData Mallorca, 2017</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="//www.slideshare.net/slideshow/embed_code/key/Cf0JC3MlJLoyHR" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Machine Learning for Digital Advertising</h3>
-                  <p>Outreach Digital, London, 2016</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="//www.slideshare.net/slideshow/embed_code/key/Sd2BH6GdB6XUO" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Machine Learning for Digital Advertising</h3>
-                  <p>PyData London, 2016</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/mtIePLVqVhA" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Understanding Random Forests</h3>
-                  <p>PyData Madrid, 2016</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/7fquVe4Q4No" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>CART: Not only classification and regression trees</h3>
-                  <p>PyData Amsterdam, 2016</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="//www.slideshare.net/slideshow/embed_code/key/j3AoBkBec1F6WI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>High Performance Python</h3>
-                  <p>Barcelona Python Meetup, 2015</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                       <iframe width="420" height="315" src="https://www.youtube.com/embed/SGz5RZEOMFE" frameborder="0" allowfullscreen></iframe>
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Remote execution of Python scripts using Viri</h3>
-                  <p>EuroPython, Firenze, 2011</p>
-              </div>
-           </div>
-           <hr>
-           <div class="row">
-              <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                        <video width="560" height="340" controls>
-                            <source src="http://05d2db1380b6504cc981-8cbed8cf7e3a131cd8f1c3e383d10041.r93.cf2.rackcdn.com/djangocon-2009/10_google-summer-of-code-overview-panel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                        </video>
-
-                  </div>
-              </div>
-              <div class="col-sm-8">
-                  <h3>Google Summer of Code Overview Panel</h3>
-                  <p>DjangoCon, Portland, OR, 2009</p>
-              </div>
-           </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center" id="contact">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-12">
-                        <h3>Contact & Follow me</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline" id="my-email"><i class="fa fa-fw fa-envelope"></i></a>
-                            </li>
-                            <li>
-                                <a href="/blog/" class="btn-social btn-outline"><i class="fa fa-fw fa-rss"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/datapythonista/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/101353298620714815735/posts" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/datapythonista" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/datapythonista/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                            </li>
-                            <li>
-                                <a href="http://stackoverflow.com/users/711705/marc-garcia" class="btn-social btn-outline"><i class="fa fa-fw fa-stack-overflow"></i></a>
-                            </li>
-                            <li>
-                                <a href="http://www.slideshare.net/MarcGarcia11" class="btn-social btn-outline"><i class="fa fa-fw fa-slideshare"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Marc Garcia 2015
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+      </div>
     </div>
+  </div>
 
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Bank of America Merrill Lynch</h2>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/baml.png" class="img-responsive img-centered" alt="">
-                            <p>Bank of America Merrill Lynch is one of the largest financial institutions in the world. As part of the Middle Office Technologies team, my responsibilities are to develop software to reconcile information among different systems.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://www.bankofamerica.com">Bank of America Merrill Lynch</a></strong></li>
-                                <li>Year: <strong>2016</strong></li>
-                                <li>Technologies: <strong>Python, Quartz, MS SQL Server</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+  <div id="services">
+    <div class="container">
+        <div class="row">
+
+          <div class="services-item col-lg-4 col-md-12">
+            <i class="ion-ios-book-outline"></i>
+            <span>Training</span>
+            <p class="separator">Boost the productivity of your team with specialized training to better understand pandas and its ecosystem</p>
+          </div>
+
+          <div class="services-item col-lg-4 col-md-12">
+            <i class="ion-ios-checkmark-outline"></i>
+            <span>Consultancy</span>
+            <p class="separator">Make sure your team is using the right tools and the best practices when building pipelines, and analyzing data</p>
+          </div>
+
+          <div class="services-item col-lg-4 col-md-12">
+            <i class="ion-ios-gear-outline"></i>
+            <span>Open source development</span>
+            <p class="separator">Get the features you need and increase the performance in the parts that are critical for your business</p>
+          </div>
+
         </div>
     </div>
+  </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Logitravel</h2>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/logitravel.jpg" class="img-responsive img-centered" alt="">
-                            <p>Logitravel is an online travel agency specialising in holidays, offering a large range of travel products and services at great prices: packages holidays, hotels, flights, car hire and more..</p>
-                            <p>Logitravel was founded in 2004 by a team of talented web programmers with experience in the travel industry. From the very beginning the company has aimed to satisfy the needs of a growing niche within the market by providing an aggressive price policy and a wide range of products, all with great customer service.</p>
-                            <p>Logitravel is within the top three best online travel agencies in Spain and also one of the fastest growing in Europe. Operating in 7 countries, with a turnover over €500M, Logitravel has a team of over 300 young and skilled multicultural employees.</p>
 
-                            <p>The project consisted on the usage of data mining and machine learning techniques, applied to marketing analytics for hotel room sales.</p>
-                            <p>It involves analyzing the patterns on user behavior when looking for hotels, estimating the probability of a specific user to book a hotel room using machine learning models, and optimizing the revenues and profits in online marketing campaigns.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://www.logitravel.com">Logitravel Group</a></strong></li>
-                                <li>Year: <strong>2015 - 2017</strong></li>
-                                <li>Technologies: <strong>Python, Pandas, numpy, scikit-learn, matplotlib, Bokeh</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="resources" class="text-left paddsection">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Featured talks and articles</h2>
+      </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+    <div class="container">
+      <div class="resources-block">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <a href="/blog/pandas-documentation-update.html"><img alt="" class="img-responsive" src="/static/img/blog/pandas_doc/panda_book.jpeg"/></a>
+              <div class="resources-txt">
+                <h4><a href="/blog/pandas-documentation-update.html">An update on the pandas documentation</a></h4>
+                <p class="separator">November 2019</p>
+              </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Unilever</h2>
-                            <h3>Frigo sales force application</h3>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/frigo.jpg" class="img-responsive img-centered" alt="">
-                            <p>Unilever is a British-Dutch multinational consumer goods company co-headquartered in Rotterdam, Netherlands, and London, United Kingdom. Its products include food, beverages, cleaning agents and personal care products. It is the world's third-largest consumer goods company measured by 2012 revenue, after Procter &amp; Gamble and Nestlé. Unilever is the world's largest producer of food spreads, such as margarine. One of the oldest multinational companies, its products are available in around 190 countries.</p>
-                            <p>The project consisted in the development of a platform for supporting the sales team in marketing tasks. The application was web based, but designed for offline use, by using Google Chrome local storage API. The application contained a catalog of products, a dessert menu designer, and a back-end to manage the worflow to print the menus (acceptance/denial, generation of Adobe InDesign drafts, budget control, etc).</p>
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="https://www.unilever.com">Unilever Spain, Frigo (ice cream) brand</a></strong></li>
-                                <li>Year: <strong>2013</strong></li>
-                                <li>Technologies: <strong>Python, Django, JavaScript, JQuery</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <iframe src="https://www.youtube.com/embed/RDU9ix239Zk" allowfullscreen="" style="width: 330px; height: 250px" frameborder="0"></iframe>
+              <div class="resources-txt">
+                <h4><a href="https://github.com/datapythonista/pandas-tutorials/">Introduction to pandas (tutorial)</a></h4>
+                <p class="separator">PyData NYC, USA, October 2019</p>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <iframe src="https://www.youtube.com/embed/hlZsecUPEdU" allowfullscreen="" style="width: 330px; height: 250px" frameborder="0"></iframe>
+              <div class="resources-txt">
+                <h4><a href="https://github.com/datapythonista/pandas_future">The pandas of the future</a></h4>
+                <p class="separator">SciPy Latam, Bogotá, Colombia, October 2019</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-    </div>
+        <div class="row">
 
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <a href="/blog/dataframe-summit-at-euroscipy.html"><img alt="" class="img-responsive" src="/static/img/blog/dataframe_summit.jpeg"/></a>
+              <div class="resources-txt">
+                <h4><a href="/blog/dataframe-summit-at-euroscipy.html">Dataframe summit @ EuroSciPy</a></h4>
+                <p class="separator">September 2019</p>
+              </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>NTT Communications</h2>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/ntt.jpg" class="img-responsive img-centered" alt="">
-                            <p>The Nippon Telegraph and Telephone Corporation, commonly known as NTT, is a Japanese telecommunications company headquartered in Tokyo, Japan. Ranked 65th in Fortune Global 500, NTT is the third largest telecommunications company in the world in terms of revenue.</p>
-                            <p>The project involved the development of internal tools to automate common sysadmin tasks</p>
-                            <p>Main tools developed were:</p>
-                            <ul>
-                                <li>A Python distributed system, <a href="https://github.com/datapythonista/viri">Viri</a>, to automate tasks such as backups, monitoring, updates, maintenance, information gathering, etc. in a large numbers of computers</li>
-                                <li>A Django interface to manage hardware and software inventory</li>
-                                <li>Automated reporting system for monitoring, and database reports</li>
-                                <li>Alert system for server failure</li>
-                            </ul>
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://eu.ntt.com">NTT Communications, Application Management Division</a></strong></li>
-                                <li>Year: <strong>2011</strong></li>
-                                <li>Technologies: <strong>Python, Django</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <a href="/blog/pandas-the-two-cultures.html"><img alt="" class="img-responsive" src="/static/img/blog/two_cultures/dr_jekyll_mr_hyde.jpeg"/></a>
+              <div class="resources-txt">
+                <h4><a href="/blog/pandas-the-two-cultures.html">pandas: The two cultures</a></h4>
+                <p class="separator">July 2019</p>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <iframe src="https://www.youtube.com/embed/KtGY96fqP7s" allowfullscreen="" style="width: 330px; height: 250px" frameborder="0"></iframe>
+              <div class="resources-txt">
+                <h4><a href="https://github.com/datapythonista/pandas_ecosystem">pandas ecosystem 2019</a></h4>
+                <p class="separator">PyCon X, Florence, Italy, May 2019</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-    </div>
+        <div class="row">
 
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <iframe src="https://www.youtube.com/embed/hK6o_TDXXN8" allowfullscreen="" style="width: 330px; height: 250px" frameborder="0"></iframe>
+              <div class="resources-txt">
+                <h4><a href="https://github.com/datapythonista/towards_pandas_1">Towards pandas 1.0</a></h4>
+                <p class="separator">PyData London, UK, August 2018</p>
+              </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Obra Social "la Caixa"</h2>
-                            <h3>Educational activities website</h3>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/lacaixa.jpg" class="img-responsive img-centered" alt="">
-                            <p>La Caixa, formally Caixa d'Estalvis i Pensions de Barcelona (Spanish: Caja de Ahorros y Pensiones de Barcelona), is Europe’s leading savings bank and Spain's third largest financial institution, with a network of over 5.800 branches, more than 9,500 automated teller machines, a workforce in excess of 31,900 and more than 13 million customers.</p>
-                            <p>La Caixa foundation owns several leading museums in Spain, including CosmoCaixa (science museums), CaixaForum (exhibition museums), in the main cities, including Madrid, Barcelona. This project consisted in the development of a website to promote the educational activities offered in these museums.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://obrasocial.lacaixa.es/">Obra Social, Fundació "la Caixa"</a></strong></li>
-                                <li>Year: <strong>2009</strong></li>
-                                <li>Technologies: <strong>Python, Django, JavaScript, JQuery</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <iframe src="https://www.youtube.com/embed/F37fV0uFf60" allowfullscreen="" style="width: 330px; height: 250px" frameborder="0"></iframe>
+              <div class="resources-txt">
+                <h4><a href="http://datapythonista.github.io/docs/pandas-internals/">Demystifying pandas internals</a></h4>
+                <p class="separator">PyData London, UK, April 2018</p>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="resources-info">
+              <a href="/blog/pandassprint-write-up.html"><img alt="" class="img-responsive" src="/static/img/blog/pandas_doc_sprint.jpeg"/></a>
+              <div class="resources-txt">
+                <h4><a href="/blog/pandassprint-write-up.html">#pandasSprint write-up</a></h4>
+                <p class="separator">March 2018</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+      </div>
     </div>
+  </div>
 
 
-
-
-
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Google Summer of Code</h2>
-                            <h3>Implementation of additional i18n features on Django</h3>
-                            <hr class="star-primary">
-                            <img src="static/img/portfolio/gsoc2009.png" class="img-responsive img-centered" alt="">
-
-                            <h4>The problem</h4>
-                            <p>While Django provides an amazing system to translate texts, and displays localized dates in some parts of the admin; it has many data that could be internationalized, not it's not yet.</p>
-                            <p>The information that developers should be able to localize/translate is mainly:</p>
-                            <ul>
-                                <li> All dates and related information (times, calendars...)</li>
-                                <li> All numbers (mainly decimal ones)</li>
-                                <li> Texts  (and any data in general) saved on the database</li>
-                            </ul>
-                            <p>More information on these issues can be found in the following ticket: <a href="http://code.djangoproject.com/ticket/7980">http://code.djangoproject.com/ticket/7980</a></p>
-
-                            <h4>Proposal</h4>
-                            <p>The proposed solution for improving Django i18n includes several different tasks. Those tasks are:</p>
-                            <ul>
-                                <li> Import locale data from CLDR</li>
-                                <li> Apply i18n to Django dates and times</li>
-                                <li> Apply i18n to Django numbers</li>
-                                <li> Allow translating content on the database</li>
-                                <li>Fix already reported bug about i18n</li>
-                            </ul>
-                            <p>Next are the details for every task. Note that all those specifications are subject to change, according to discussions with the mentor of the project, Django core developers team, and the main Django community.</p>
-
-                            <h4>Importing locale data</h4>
-                            <p>The main repository of locale data is the Common Locale Data Repository (CLDR) by the Unicode Consortium http://cldr.unicode.org/. It provides a set of XML files with information such as date, time and number formatting for most languages.</p>
-                            <p>The idea of this task would be to create a python script (probably as a django-admin command), that will extract all necessary data from those XML files and put it into configuration files on the Django structure. This information will be used by Django to internationalize data on applications.</p>
-                            <p>The idea of this script is to be used just by Django developers. It would mainly be a one-time execution script, and then it would be executed just when new locales are added (are some are changed).</p>
-                            <p>All information gathered from CLDR files could be saved on django/conf/locale/{language_code}/formats/django.po</p>
-                            <p>Specific settings imported from CLDR could be (with English localized example):</p>
-                            <ul>
-                                <li>SHORT_DATETIME_FORMAT (12-31-2000 11:59 p.m.)</li>
-                                <li>LONG_DATETIME_FORMAT (December 31th 2000, 11:59 p.m.)</li>
-                                <li>SHORT_DATE_FORMAT (12-31-2000)</li>
-                                <li>LONG_DATE_FORMAT (December 31th 2000)</li>
-                                <li>FIRST_DAY_OF_WEEK (0 meaning Sunday)</li>
-                                <li>TIME_FORMAT (11:59 p.m.)</li>
-                                <li>YEAR_MONTH_FORMAT (December of 2000)</li>
-                                <li>MONTH_DAY_FORMAT (December 31th)</li>
-                                <li>DECIMAL_NUMBER  FORMAT (1,000,000.123)</li>
-                            </ul>
-                            <p>There are some locale based parameters that already exist on Django, on translation files (LC_MESSAGES) and could be deprecated on future releases of Django (when breaking backward compatibility). Those are:</p>
-                            <ul>
-                                <li>DATETIME_FORMAT</li>
-                                <li>DATE_FORMAT</li>
-                                <li>TIME_FORMAT</li>
-                                <li>YEAR_MONTH_FORMAT</li>
-                                <li>MONTH_DAY_FORMAT</li>
-                            </ul>
-                            <p>For keeping the system flexible, existing default values on settings will be kept. Probably it would be worth to add new ones for the new customizable formats.</p>
-
-                            <h4>Dates, times and calendar i18n</h4>
-                            <p>All dates and times displayed using Django should use the format defined for the current session locale. This is already implemented for some dates, like the ones displayed in admin's lists. Also a filter for formatting dates already exists in templates, which, together with the formats in the translation files, can do the job. But the good way to do that would be displaying the date by default on the session locale.</p>
-                            <p>All Django forms (including admin forms) should accept the short date/datetime format of the current locale. Now it's possible to define the accepted formats using parameters of the widget, and this can be kept, but at least support for entering data formatted in current locale should be added. ISO and/or English locale can be kept as well. Existing data on input fields should be displayed in current locale too.</p>
-                            <p>As Django 1.0 series is maintaining backward compatibility, those changes have to be implemented being compatible with existing behavior by default.</p>
-                            <p>The calendar on admin's date/datetime field should also be displayed according to user session locale.</p>
-                            <p>So basically those are the main tasks required for internationalizing Django dates:</p>
-                            <ul>
-                                <li>Format all python date/datetimes objects using locale settings when converted to string to be displayed. Basically it means models.DateField and models.DateTimeField values on model instances.</li>
-                                <li>Change  input widgets to display data and to allow entering data on the  format of the current locale.</li>
-                                <li> Display  admin calendar starting weeks on the day defined for current locale.</li>
-                            </ul>
-                            <p>With those changes next tickets would be fixed:</p>
-                            <ul>
-                                <li>#1061 About first day on calendars</li>
-                                <li>#5526 About accepting non-English formats on input widgets</li>
-                                <li>#6231 About the output format of the SelectDateWidget</li>
-                                <li>#6449 About default format of displayed dates</li>
-                                <li>#6483 About supporting European dates on javascript routines</li>
-                                <li>#7509 About supporting different formats on SplitDateTimeWidget</li>
-                                <li>#7656 About inheriting i18n features of AdminDateWidget</li>
-                            </ul>
-
-                            <h4>Number i18n</h4>
-                            <p>Right now, Django doesn't provide anything for localizing numbers on applications. All numeric values within Django applications are formatted using American formats. Users from many countries are not used to dealing with the American format, and a simple shop using Django can create confusion among users who, for example, expect the comma to be the decimal separator, and they find the point on prices.</p>
-                            <p>As for the previous section, changes must be applied keeping backward compatibility.</p>
-                            <p>So Django should display, and use by default the language of the current locale to format numbers. Basically that means:</p>
-                            <ul>
-                                <li> Format  numbers on templates using current session locale</li>
-                                <li> Display  and allow entering data using session locale on input widgets</li>
-                            </ul>
-                            <p>With those changes next ticket should be fixed:</p>
-                            <ul>
-                                <li> #3940  About comma as decimal separator</li>
-                            </ul>
-
-                            <h4>Fix i18n bugs</h4>
-                            <p>There are many bugs already accepted on Django trac, that would be fixed on this Summer of Code. A better review will be done, but some of them could be:</p>
-                            <ul>
-                                <li>#3907: LocaleMiddleware allows languages not supported by Django</li>
-                                <li>#5494: Javascript catalog doesn't check project level locales</li>
-                                <li>#7050: make-messages should ignore applications with custom localization</li>
-                            </ul>
-
-                            <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://www.google.com">Google</a> | <a href="http://www.djangoproject.com">Django Software Foundation</a></strong></li>
-                                <li>Year: <strong>2009</strong></li>
-                                <li>Technologies: <strong>Python, Django</strong></li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <ul class="list-unstyled">
+          <li><a href="https://twitter.com/datapythonista"><i class="ion-social-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/datapythonista/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="https://github.com/datapythonista/"><i class="ion-social-github"></i></a></li>
+        </ul>
+      </div>
+      <p>&copy; Copyright Marc Garcia. All rights reserved.</p>
     </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="static/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="static/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="static/js/classie.js"></script>
-    <script src="static/js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="static/js/jqBootstrapValidation.js"></script>
-    <script src="static/js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="static/js/freelancer.js"></script>
-
-    <script>
-        var username = 'garcia' + '.' + 'marc';
-        var domain = 'gmail' + '.' + 'com';
-        $('#my-email').attr('href', 'mailto:' + username + '@' + domain);
-    </script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-1635939-25', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+  <script src="/static/js/jquery/jquery.min.js"></script>
+  <script src="/static/js/jquery/jquery-migrate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="/static/js/typed/typed.js"></script>
+  <script src="/static/js/home.js"></script>
 </body>
-
 </html>

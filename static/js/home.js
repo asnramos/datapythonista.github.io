@@ -3,9 +3,13 @@ $(document).ready(function() {
 
   'use strict';
 
-  // ========================================================================= //
-  //  //SMOOTH SCROLL
-  // ========================================================================= //
+  $(window).resize(function() {
+    if (window.innerWidth > 960) {
+      $("#header").css("background-image", 'url("/static/img/home-bg.jpg")');
+    } else {
+      $("#header").css("background-image", 'none');
+    }
+  });
 
 
   $(document).on("scroll", onScroll);

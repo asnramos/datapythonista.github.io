@@ -69,6 +69,12 @@ owns the project, and data scientists report to them. There are also
 cases where the leadership is shared between technical and business
 managers.
 
+Participants have also shared accounts of spending quality time with
+stakeholders not directly involved in the data work, like executives
+or internal clients. Time spent on introducing concepts, plans, and 
+getting feedback in an informal setting contributed to long term success,
+i.e. made getting buy-in easier.
+
 ## Organization
 
 ![](/static/img/blog/data_projects/session1.jpeg)

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>datapythonista blog - Marc Garcia</title><link>https://datapythonista.github.io/blog/</link><description>about me</description><lastBuildDate>Thu, 28 Nov 2019 00:00:00 +0000</lastBuildDate><item><title>An update on the pandas documentation</title><link>https://datapythonista.github.io/blog/pandas-documentation-update.html</link><description>&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
+<rss version="2.0"><channel><title>datapythonista blog - Marc Garcia</title><link>https://datapythonista.github.io/blog/</link><description>about me</description><lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate><item><title>Successful delivery of data projects</title><link>https://datapythonista.github.io/blog/successful-delivery-of-data-projects.html</link><description>&lt;h1&gt;Successful delivery of data projects&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/data_projects/tower_bridge.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;This week we organized a round table with people involved in the management
+of data projects. Mostly data science.&lt;/p&gt;
+&lt;p&gt;The idea came after the &lt;a href="https://pydata.org/london2019/schedule/presentation/61/executives-at-pydata/"&gt;Executives at PyData&lt;/a&gt;
+session organized earlier this year. And discussions with few people on the
+challenges when trying to deliver data …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marc Garcia</dc:creator><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid isPermaLink="false">tag:datapythonista.github.io,2019-12-01:/blog/successful-delivery-of-data-projects.html</guid></item><item><title>An update on the pandas documentation</title><link>https://datapythonista.github.io/blog/pandas-documentation-update.html</link><description>&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
 &lt;h2&gt;Some context&lt;/h2&gt;
 &lt;p&gt;This post is mainly a technical post on what's the status of the pandas documentation.

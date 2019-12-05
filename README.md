@@ -6,15 +6,13 @@ This is the personal page of Marc Garcia
 [@datapythonista](https://datapythonista.github.io).
 
 It has two main components:
-- Home page (index.html) using the
-  [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
-  template
+- Home page (index.html)
 - Blog using [Pelican](https://blog.getpelican.com/)
 
 To add a new entry to the blog:
 - Create a new markdown file/notebook in `content/`
 - Run `pelican content` (requires that dependencies in `environment.yml` are
-  installed)
+  installed, `conda env create && conda activate blog` should create and activate the environment)
 - `git commit && git push`
 
 If the `attila` submodule is not initialized locally, it can be fetched with

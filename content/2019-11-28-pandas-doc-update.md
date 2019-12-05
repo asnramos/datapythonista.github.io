@@ -183,7 +183,7 @@ finish when it's expected to finish. Or a broken table that renders as plain tex
 
 This has been challenging until now, since CI systems don't do this automatically,
 and it's tricky to implement manually. CircleCI provided this feature, but to
-access the rendered documentation you had to know the url and replace the id of
+access the rendered documentation you have to know the url and replace the id of
 your build on it. Maintainers could do that in a not very efficient way, but
 first-time contributors couldn't guess.
 
@@ -195,18 +195,19 @@ a pull request is opened or updated, and its docs are built. After being trigger
 it would fetch the docs, and publish them somewhere, using a key only accessible
 in the server.
 
-Implementing that was in our backlog for a while. But there is another problem.
+Implementing that has been in our backlog for a while. But there is another problem.
 Where to host all these copies of the documentation. We use GitHub pages to
 host the latest version of our docs. But since Git/GitHub track all the history
 of changes, the repo would grow huge very quickly if we add all our docs (around
 50Mb) for every pull request.
 
-The solution to this came easier than expected, since GitHub Actions is able to
-access "secrets" from pull request builds. These secrets are private values added
-to a repo, and can be used to store our hosting key. And [OVH](https://www.ovh.co.uk/)
-has recently sponsored a new pandas cloud hosting, were we can temporary store
+The solution to this may come easier than expected, since GitHub Actions seems to be consideting
+implementing it. Not sure when that could be ready, if ever. In the meantime [OVH](https://www.ovh.co.uk/)
+has recently started sponsoring a new pandas cloud hosting, were we can temporary store
 all these versions of the docs. This is being implemented now, and with some
-luck should be in production in just couple of days. GitHub Actions will also
+luck should be in production soon. If we implement our GitHub app to publish the docs, the
+new hosting and GitHub Actions will make it much easier than it was before.
+GitHub Actions will also
 make very simple to delete the docs for a PR once it is merged or closed.
 
 ## Validating docstrings in the CI

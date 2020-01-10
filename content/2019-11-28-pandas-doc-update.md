@@ -2,10 +2,6 @@ Title: An update on the pandas documentation
 Slug: pandas-documentation-update
 Tags: pandas
 
-# An update on the pandas documentation
-
-![](/static/img/blog/pandas_doc/panda_book.jpeg)
-
 ## Some context
 
 This post is mainly a technical post on what's the status of the pandas documentation.
@@ -15,6 +11,8 @@ It's a personal opinion, but I think pandas is one of the clearest examples of h
 source is transforming the data world (together with some other projects like scikit-learn,
 Jupyter, R...). Is likely that pandas contributed to the huge growth of
 Python, a language that not many people knew about when pandas development started.
+
+![](/static/img/blog/pandas_doc/panda_book.jpeg)
 
 And I think its documentation has been the clearest example of the paradox of open
 source software. While pandas users were growing to the millions, and it was adopted in thousands

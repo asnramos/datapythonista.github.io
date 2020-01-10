@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - pandas</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/pandas.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-11-28T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>An update on the pandas documentation</title><link href="https://datapythonista.github.io/blog/pandas-documentation-update.html" rel="alternate"></link><published>2019-11-28T00:00:00+00:00</published><updated>2019-11-28T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-28:/blog/pandas-documentation-update.html</id><summary type="html">&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
-&lt;h2&gt;Some context&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>datapythonista blog - pandas</title><link href="https://datapythonista.github.io/blog/" rel="alternate"></link><link href="https://datapythonista.github.io/blog/feeds/pandas.atom.xml" rel="self"></link><id>https://datapythonista.github.io/blog/</id><updated>2019-11-28T00:00:00+00:00</updated><subtitle>about me</subtitle><entry><title>An update on the pandas documentation</title><link href="https://datapythonista.github.io/blog/pandas-documentation-update.html" rel="alternate"></link><published>2019-11-28T00:00:00+00:00</published><updated>2019-11-28T00:00:00+00:00</updated><author><name>Marc Garcia</name></author><id>tag:datapythonista.github.io,2019-11-28:/blog/pandas-documentation-update.html</id><summary type="html">&lt;h2&gt;Some context&lt;/h2&gt;
 &lt;p&gt;This post is mainly a technical post on what's the status of the pandas documentation.
 But let me provide a bit of context on where this comes from.&lt;/p&gt;
-&lt;p&gt;It's a personal opinion, but I think pandas is one of the clearest examples …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;An update on the pandas documentation&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
-&lt;h2&gt;Some context&lt;/h2&gt;
+&lt;p&gt;It's a personal opinion, but I think pandas is one of the clearest examples of how open
+source is transforming …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Some context&lt;/h2&gt;
 &lt;p&gt;This post is mainly a technical post on what's the status of the pandas documentation.
 But let me provide a bit of context on where this comes from.&lt;/p&gt;
 &lt;p&gt;It's a personal opinion, but I think pandas is one of the clearest examples of how open
 source is transforming the data world (together with some other projects like scikit-learn,
 Jupyter, R...). Is likely that pandas contributed to the huge growth of
 Python, a language that not many people knew about when pandas development started.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/static/img/blog/pandas_doc/panda_book.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;And I think its documentation has been the clearest example of the paradox of open
 source software. While pandas users were growing to the millions, and it was adopted in thousands
 of companies (including the largest companies in the world), almost nobody spent any time
@@ -148,7 +146,7 @@ make the documentation render in an incorrect way. Like a bold style that doesn'
 finish when it's expected to finish. Or a broken table that renders as plain text.&lt;/p&gt;
 &lt;p&gt;This has been challenging until now, since CI systems don't do this automatically,
 and it's tricky to implement manually. CircleCI provided this feature, but to
-access the rendered documentation you had to know the url and replace the id of
+access the rendered documentation you have to know the url and replace the id of
 your build on it. Maintainers could do that in a not very efficient way, but
 first-time contributors couldn't guess.&lt;/p&gt;
 &lt;p&gt;Implementing it manually has a main challenge. The CI is usually only able to
@@ -158,17 +156,18 @@ would be to host in a server a GitHub application that receives a webhook when
 a pull request is opened or updated, and its docs are built. After being triggered
 it would fetch the docs, and publish them somewhere, using a key only accessible
 in the server.&lt;/p&gt;
-&lt;p&gt;Implementing that was in our backlog for a while. But there is another problem.
+&lt;p&gt;Implementing that has been in our backlog for a while. But there is another problem.
 Where to host all these copies of the documentation. We use GitHub pages to
 host the latest version of our docs. But since Git/GitHub track all the history
 of changes, the repo would grow huge very quickly if we add all our docs (around
 50Mb) for every pull request.&lt;/p&gt;
-&lt;p&gt;The solution to this came easier than expected, since GitHub Actions is able to
-access "secrets" from pull request builds. These secrets are private values added
-to a repo, and can be used to store our hosting key. And &lt;a href="https://www.ovh.co.uk/"&gt;OVH&lt;/a&gt;
-has recently sponsored a new pandas cloud hosting, were we can temporary store
+&lt;p&gt;The solution to this may come easier than expected, since GitHub Actions seems to be consideting
+implementing it. Not sure when that could be ready, if ever. In the meantime &lt;a href="https://www.ovh.co.uk/"&gt;OVH&lt;/a&gt;
+has recently started sponsoring a new pandas cloud hosting, were we can temporary store
 all these versions of the docs. This is being implemented now, and with some
-luck should be in production in just couple of days. GitHub Actions will also
+luck should be in production soon. If we implement our GitHub app to publish the docs, the
+new hosting and GitHub Actions will make it much easier than it was before.
+GitHub Actions will also
 make very simple to delete the docs for a PR once it is merged or closed.&lt;/p&gt;
 &lt;h2&gt;Validating docstrings in the CI&lt;/h2&gt;
 &lt;p&gt;Two key pieces to validate contributions to the pandas docstrings are in place:&lt;/p&gt;

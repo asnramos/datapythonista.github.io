@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Ibis: Python data analysis productivity framework</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' href='/ibis'/>
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="/ibis/static/css/ibis.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="/ibis/">
+                        
+                            <img alt="" src="/ibis/static/img/logo_ibis.svg" class="header-logo"/>
+                        
+                        
+                            <span class="header-title">Ibis</span>
+                        
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ml-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="/ibis/about/index.html">About Ibis</a>
+                                        
+                                            <a class="dropdown-item" href="/ibis/about/team.html">Team</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/ibis/getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://docs.ibis-project.org">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/ibis">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="/ibis/community/coc.html">Code of conduct</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/ibis/contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                
+                               <div class="row">
+    <div class="col">
+        <section class="jumbotron text-center">
+            <h1>Ibis</h1>
+            <p>
+                Write your analytics code once, run it everywhere.
+            </p>
+            <p>
+                <a class="btn btn-primary" href="/ibis/getting_started.html">Try Ibis now &raquo;</a>
+            </p>
+        </section>
+    </div>
+</div>
+
+<p>Ibis provides a standard way to write analytics code, that then can be run in
+multiple engines.</p>
+<h2 id="main-features">Main features</h2>
+<ul>
+<li>Full coverage of SQL features: You can code in Ibis anything you can implement in a SQL SELECT</li>
+<li>Transparent to SQL implementation differences: Write standard code that translate to any SQL syntax</li>
+<li>High performance execution: Execute at the speed of your backend, not your local computer</li>
+<li>Integration with community data formats and tools (e.g. pandas, Parquet, Avro...)</li>
+</ul>
+<h2 id="supported-engines">Supported engines</h2>
+<ul>
+<li>Standard DBMS: PostgreSQL, MySQL, SQLite</li>
+<li>Hadoop based systems: Hive, Impala, Spark, PySpark, Kudu</li>
+<li>Other big data systems: Google BigQuery</li>
+<li>Analytical DBMS: ClickHouse</li>
+<li>GPU accelerated analytical DBMS: omniscidb</li>
+<li>Python dataframe libraries: pandas</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>The next example is all the code you need to connect to a database with a
+countries database, and compute the number of citizens per squared kilometer in Asia:</p>
+<pre><code class="python">import ibis
+
+db = ibis.sqlite.connect('geonames.db')
+
+countries = geonames_db.table('countries')
+
+asian_countries = countries[countries['continent'] == 'AS']
+
+density_in_asia = asian_countries['population'].sum() / asian_countries['area_km2'].sum()
+
+density_in_asia.execute()
+</code></pre>
+
+<h2 id="comparison-to-other-tools">Comparison to other tools</h2>
+<h3 id="why-not-use-pandas">Why not use pandas?</h3>
+<p>pandas is great for many use cases. But pandas loads the data into the
+memory of the local host, and performs the computations on it.</p>
+<p>Ibis instead, leaves the data in its storage, and performs the computations
+there. This means that even if your data is distributed, or it requires
+GPU accelarated speed, Ibis code will be able to benefit from your storage
+capabilities.</p>
+<h3 id="why-not-use-sql">Why not use SQL?</h3>
+<p>SQL is widely used and very convenient when writing simple queries. But as
+the complexity of operations grow, SQL can become very difficult to deal with.</p>
+<p>With Ibis, you can take fully advantage of software engineering techniques to
+keep your code readable and maintainable, while writing very complex analitics
+code.</p>
+<h3 id="why-not-use-sqlalchemy">Why not use SQLAlchemy?</h3>
+<p>SQLAlchemy is very convenient as an ORM (Object Relational Mapper), providing
+a Python interface to SQL databases. But SQLAlchemy is focussed on access to
+the data, and not to perform analytics on it. And it is mostly limited to
+conventional SQL databases, and doesn't support big data platforms or specialized
+analytical tools.</p>
+                               
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            
+                <ul class="list-inline social-buttons float-right">
+                    
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/IbisData" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            <a href="https://github.com/ibis-project/ibis/" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+            <p>
+                © Copyright 2020, Ibis developers
+            </p>
+        </footer>
+                
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
